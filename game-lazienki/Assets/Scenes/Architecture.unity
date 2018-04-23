@@ -152,6 +152,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11456902, guid: b58f1f87dc68947dfb9766f0cb9ec1fc, type: 2}
+      propertyPath: _WikitudeLicenseKey
+      value: lBnuITVjPJl0vqNgb878qvvgiClO912rs0y9uJbHZ/cj0rPFvKsevq6QCjZlxdO2lj2VZA5bFthsJL2NnLYRW+O52mnDExryOktQla2lVRMxck2JPR241+7XczV9bgB0p6MqGKRu8SJEUK9UlNSc9sZ3eGxv2ru984D0IidMpsBTYWx0ZWRfX0jmwhNufJ9Az9rLHU/mJ/CxHinkDOGaiIsGViFz6c2/ryeC1Xlpl/rJkMszq4I3+QWvfIl/QMStxYiQGnpjBUcM5dUEGVHAb3MYyFiSMwrqOoMhtKfUK+zAhjCn1uIg+TMC7VpdaHfYQMq62ohHWzMaKBGTqBiSU2Jpv97RwKhsmWugLzY+mbxZ77Obi0u5pb6t3Fhq+U/2jxvaD5/zHB4ulKvQOsppx6sS02gU7v/IiJGuqS/2gA9gIyOEAau90nU0Ox90QcJ2jA6MquIy1yQIm0dKY7r3nt3k20EXmW6UP7dkNg2dzM3ntsISiJy0ePh7+epBNQkxTAY3//nXWKhhKjoc1C0/I6Sa+avQtZVzvlBpWcxtff+Stq+7vzqhT0HGYBDiGzQhO2GUfoyMs8M/piVPHHDtLJz8NcEcF8mkx/9p5SsV25somSPL/lb3IvkKXmVQRsMi/jXNi3yoPUErEkS2MRYq29PxwXrdlpW3Vr8rcP0CQB5QfuDamrB4rN7kJmE4Su2x
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b58f1f87dc68947dfb9766f0cb9ec1fc, type: 2}
   m_IsPrefabParent: 0

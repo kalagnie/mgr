@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour {
 
 	//wlacz/wylacz tracking
 	public Button trackingControl;
+	public GameObject prefab;
 
 
 	public void Awake(){
@@ -56,6 +57,24 @@ public class Controller : MonoBehaviour {
 			//change button collor while tracking
 			trackingControl.GetComponent<Image> ().color = Color.red;
 		}
+	}
+
+	void Update(){
+		if (!isTracking)
+			return;
+		/*
+		if (Input.GetTouch (0).tapCount == 2) {
+			GameObject sphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+			sphere.transform.position = Camera.main.transform.position;
+		}
+		*/
+		/*
+		var ray = Camera.main.ScreenPointToRay (Touch.position); 
+		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
+			if (Physics.Raycast (ray, RaycastHit, 100))
+				Debug.DrawLine (ray.origin, RaycastHit.point);
+		}
+		*/
 	}
 
 }

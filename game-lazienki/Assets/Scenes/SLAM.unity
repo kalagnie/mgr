@@ -390,6 +390,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11456902, guid: b58f1f87dc68947dfb9766f0cb9ec1fc, type: 2}
+      propertyPath: _WikitudeLicenseKey
+      value: lBnuITVjPJl0vqNgb878qvvgiClO912rs0y9uJbHZ/cj0rPFvKsevq6QCjZlxdO2lj2VZA5bFthsJL2NnLYRW+O52mnDExryOktQla2lVRMxck2JPR241+7XczV9bgB0p6MqGKRu8SJEUK9UlNSc9sZ3eGxv2ru984D0IidMpsBTYWx0ZWRfX0jmwhNufJ9Az9rLHU/mJ/CxHinkDOGaiIsGViFz6c2/ryeC1Xlpl/rJkMszq4I3+QWvfIl/QMStxYiQGnpjBUcM5dUEGVHAb3MYyFiSMwrqOoMhtKfUK+zAhjCn1uIg+TMC7VpdaHfYQMq62ohHWzMaKBGTqBiSU2Jpv97RwKhsmWugLzY+mbxZ77Obi0u5pb6t3Fhq+U/2jxvaD5/zHB4ulKvQOsppx6sS02gU7v/IiJGuqS/2gA9gIyOEAau90nU0Ox90QcJ2jA6MquIy1yQIm0dKY7r3nt3k20EXmW6UP7dkNg2dzM3ntsISiJy0ePh7+epBNQkxTAY3//nXWKhhKjoc1C0/I6Sa+avQtZVzvlBpWcxtff+Stq+7vzqhT0HGYBDiGzQhO2GUfoyMs8M/piVPHHDtLJz8NcEcF8mkx/9p5SsV25somSPL/lb3IvkKXmVQRsMi/jXNi3yoPUErEkS2MRYq29PxwXrdlpW3Vr8rcP0CQB5QfuDamrB4rN7kJmE4Su2x
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b58f1f87dc68947dfb9766f0cb9ec1fc, type: 2}
   m_IsPrefabParent: 0
@@ -766,6 +770,10 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1909575969 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: e8449808043a6114eb825a7cbbf749bf, type: 3}
+  m_PrefabInternal: {fileID: 358093943}
 --- !u!1 &2045766029
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tracker: {fileID: 1491114737}
   trackingControl: {fileID: 1718597691}
+  prefab: {fileID: 1909575969}
 --- !u!4 &2045766031
 Transform:
   m_ObjectHideFlags: 0

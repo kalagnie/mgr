@@ -14,6 +14,7 @@ public class GPS : MonoBehaviour {
 
 	//test
 	public Text test;
+	public Text testH;
 
 	private void Start () {
 		Instance = this;
@@ -47,17 +48,20 @@ public class GPS : MonoBehaviour {
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 
-		isCloseEnough = HaversineFormula (latitude, longitude);
+		isCloseEnough = CalculatingDistance (latitude, longitude);
 
 		yield break;
 	}
 
-	private bool HaversineFormula (double fi1, double lambda1){
-		//zdefiniowany punkt, do ktorego mierzymy odleglosc
-		var fi2 = 52.17731867467772;
-		var lambda2 = 21.05153060884163;
+	private double CosineLaw(double fi1, double lambda1, double fi2, double lambda2, double R){
+		var deltaLambda = lambda1 - lambda2;
+		var cosc = Math.Sin (fi1) * Math.Sin (fi2) + Math.Cos (fi1) * Math.Cos (fi2) * Math.Cos (deltaLambda);
+		var distance = Math.Acos (cosc) * R;
 
-		var R = 6378.137; //promien Ziemi w m
+		return distance;
+	}
+
+	private double HaversineFormula(double fi1, double lambda1, double fi2, double lambda2, double R){
 
 		var deltaFi = fi1 - fi2;
 		var deltaLambda = lambda1 - lambda2;
@@ -68,20 +72,45 @@ public class GPS : MonoBehaviour {
 		var distance = 2 * R * Math.Atan2 (Math.Sqrt(a), Math.Sqrt(1-a));
 		Debug.Log ("distance: " + distance);
 
+		return distance;
+	}
+
+	private bool CalculatingDistance (double fi1, double lambda1){
+		//zdefiniowany punkt, do ktorego mierzymy odleglosc
+		//var fi2 = 52.17731867467772;
+		//var lambda2 = 21.05153060884163;
+		var fi2 = 52.17696367924449;
+		var lambda2 = 21.035835875788166;
+
+		var R = 6378.137; //promien Ziemi w km
+
+		var d = HaversineFormula (fi1, lambda1, fi2, lambda2, R);
+		var distance = CosineLaw (fi1, lambda1, fi2, lambda2, R);
+
+		//Haversine
+		if (distance <= 10.0) {
+			testH.text = "Haversine\n" + d + " true";
+		} else {
+			testH.text = "Haversine\n" + d + " false";
+		}
+
+		//Cosine Law
 		if (distance <= 10.0) {
 			Debug.Log ("true");
-			test.text = distance + " true";
+			test.text = "Cosine Law\n" + distance + " true";
 			return true;
-		} else
-			test.text = distance + " false";
+		} else {
+			test.text = "Cosine Law\n" + distance + " false";
 			return false;
+		}
+
 	}
 
 	private void Update(){
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 
-		isCloseEnough = HaversineFormula (latitude, longitude);
+		isCloseEnough = CalculatingDistance (latitude, longitude);
 	}
 
 }

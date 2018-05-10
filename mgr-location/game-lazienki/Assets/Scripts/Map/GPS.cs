@@ -70,7 +70,6 @@ public class GPS : MonoBehaviour {
 		var a = Math.Sin (deltaFi / 2) * Math.Sin (deltaFi / 2) + Math.Cos (fi1) * Math.Cos (fi2) * Math.Sin (deltaLambda / 2) * Math.Sin (deltaLambda / 2);
 		//formula, *1000 => conversion to metres
 		var distance = 2 * R * Math.Atan2 (Math.Sqrt(a), Math.Sqrt(1-a));
-		Debug.Log ("distance: " + distance);
 
 		return distance;
 	}

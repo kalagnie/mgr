@@ -5,6 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: c13aa1b1ac79cda4699286c2a7e36d91
+  - enabled: 1
+    path: Assets/Scenes/Backpack.unity
+    guid: bc4cfe70a6e24fe4c86f645b58bc6fa0
+  - enabled: 1
+    path: Assets/Scenes/List.unity
+    guid: bb5d4fc9710df4b469bac8e30cce1789
   - enabled: 0
     path: Assets/Scenes/AndroidTest.unity
     guid: b3b7d69e7fd7b9c46bbcb262a1a1e9b5
@@ -26,6 +35,3 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/About.unity
     guid: d4a1b1f14ab851049ba8a50d953a3d64
-  - enabled: 1
-    path: Assets/Scenes/Map.unity
-    guid: c13aa1b1ac79cda4699286c2a7e36d91

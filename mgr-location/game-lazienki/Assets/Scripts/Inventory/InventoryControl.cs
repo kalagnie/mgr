@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class InventoryControl : MonoBehaviour {
 
-	private List<PlayerItem> playerInventory;
+	//private List<Item> playerInventory;
+	public List<Item> playerInventory;
 
 	[SerializeField]
 	private GameObject itemTemplate;
@@ -16,18 +17,20 @@ public class InventoryControl : MonoBehaviour {
 	[SerializeField]
 	private Sprite[] iconSprites;
 
+	/*
 	public class PlayerItem{
 		public Sprite iconSprite;
 		public Texture iconText;
 	}
+	*/
 
 	void Start(){
 
-		playerInventory = new List<PlayerItem> ();
+		playerInventory = new List<Item> ();
 
 		for (int i = 1; i <= 20; i++) {
 
-			PlayerItem newItem = new PlayerItem ();
+			Item newItem = new Item ();
 			newItem.iconSprite = iconSprites [Random.Range (0, iconSprites.Length)];
 
 			playerInventory.Add (newItem);
@@ -38,7 +41,7 @@ public class InventoryControl : MonoBehaviour {
 
 	void GenerateInventory(){
 		int i = 1;
-		foreach (PlayerItem newItem in playerInventory){
+		foreach (Item newItem in playerInventory){
 			GameObject item = Instantiate (itemTemplate) as GameObject;
 			item.SetActive (true);
 

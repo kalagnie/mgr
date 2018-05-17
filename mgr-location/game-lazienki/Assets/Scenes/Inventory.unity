@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 230182830}
   - component: {fileID: 230182833}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: Database
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00d90e90274d7549bb4a60c9f6fbc2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInventory: []
   itemTemplate: {fileID: 1342293917}
   gridGroup: {fileID: 737543694}
   iconSprites:

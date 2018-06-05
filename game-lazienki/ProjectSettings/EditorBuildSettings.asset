@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Map.unity
     guid: c13aa1b1ac79cda4699286c2a7e36d91
   - enabled: 1
-    path: Assets/Scenes/Backpack.unity
+    path: Assets/Scenes/Inventory.unity
     guid: bc4cfe70a6e24fe4c86f645b58bc6fa0
   - enabled: 1
     path: Assets/Scenes/List.unity
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AndroidTest.unity
     guid: b3b7d69e7fd7b9c46bbcb262a1a1e9b5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Architecture.unity
     guid: 4aaabeee3ffa1d547acca4ff4cda6514
   - enabled: 0

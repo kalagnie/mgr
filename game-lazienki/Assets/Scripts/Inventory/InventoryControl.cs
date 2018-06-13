@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class InventoryControl : MonoBehaviour {
 
-	public List<Item> playerInventory;
+
+	//public List<Item> playerInventory;
 
 	[SerializeField]
 	private GameObject itemTemplate;
@@ -13,15 +14,20 @@ public class InventoryControl : MonoBehaviour {
 	[SerializeField]
 	private GridLayoutGroup gridGroup;
 
+	//del
+	/*
 	[SerializeField]
 	private Sprite[] iconSprites;
 
+	//del
 	[SerializeField]
 	private string[] itemText;
-
+	*/
 
 	void Start(){
 
+		///*del
+		/*
 		playerInventory = new List<Item> ();
 
 		for (int i = 0; i < 10; i++) {
@@ -33,12 +39,14 @@ public class InventoryControl : MonoBehaviour {
 
 				playerInventory.Add (newItem);
 			}
+		*/
+		///* del
 		GenerateInventory ();
 	}
 
 	void GenerateInventory(){
 		int i = 1;
-		foreach (Item newItem in playerInventory){
+		foreach (Item newItem in GameState.playerInventory){
 			GameObject item = Instantiate (itemTemplate) as GameObject;
 			item.SetActive (true);
 

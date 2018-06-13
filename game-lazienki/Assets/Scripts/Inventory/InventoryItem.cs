@@ -18,5 +18,4 @@ public class InventoryItem : MonoBehaviour {
 	public void SetIcon(Sprite itemSprite){
 		itemIcon.sprite = itemSprite;
 	}
-
 }

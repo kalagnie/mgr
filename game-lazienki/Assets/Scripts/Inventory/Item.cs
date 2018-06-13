@@ -6,13 +6,14 @@ using UnityEngine;
 public class Item : MonoBehaviour {
 	public string itemName;
 	public int itemID;
-	public string itemDesc;
-	//public Texture2D itemIcon;
 	public Sprite iconSprite;
-	public ItemType itemType;
 
+	//public ItemType itemType;
+
+	/*
 	public enum ItemType{
 		Weapon,
 		Food
 	}
+	*/
 }

@@ -98,9 +98,4 @@ public class QuestionManager : MonoBehaviour {
 		StartCoroutine(TransitionToNextQuestion ());
 		*/
 	}
-
-	public void UserSelectLeave(){
-		Debug.Log ("EXIT");
-		//ZMIANA SCENY, WYJSCIE
-	}
 }

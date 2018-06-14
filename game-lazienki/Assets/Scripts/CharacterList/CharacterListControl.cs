@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CharacterListControl : MonoBehaviour {
 
-	public List<Character> characterInventory;
+	//public List<Character> characterInventory;
 
 	[SerializeField]
 	private GameObject characterTemplate;
 
+	/*
 	[SerializeField]
 	private Sprite[] characterSprites;
 
@@ -17,9 +18,12 @@ public class CharacterListControl : MonoBehaviour {
 
 	[SerializeField]
 	private string[] characterDescription;
+	*/
+
 
 	void Start(){
 
+		/*
 		characterInventory = new List<Character> ();
 
 		for (int i = 0; i < 2; i++) {
@@ -32,12 +36,14 @@ public class CharacterListControl : MonoBehaviour {
 
 			characterInventory.Add (newCharacter);
 		}
+		*/
+		///*del
 		GenerateCharacterInventory ();
 	}
 
 	void GenerateCharacterInventory(){
 		int i = 1;
-		foreach (Character newCharacter in characterInventory){
+		foreach (Character newCharacter in GameState.characterInventory){
 			GameObject item = Instantiate (characterTemplate) as GameObject;
 			item.SetActive (true);
 

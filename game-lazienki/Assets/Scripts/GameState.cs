@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour {
 
+	public static GameState Instance { set; get; }
+
 	//List of characters and list of items
 	static public List<Item> playerInventory;
 	static public List<Character> characterInventory;
@@ -32,7 +34,6 @@ public class GameState : MonoBehaviour {
 		newItem.itemName = itemText[nr];
 
 		playerInventory.Add (newItem);
-
 	}
 
 	public void AddCharacter(int nr){

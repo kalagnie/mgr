@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 279}
+  m_AnchoredPosition: {x: 0, y: 312.2649}
   m_SizeDelta: {x: 600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26458612
@@ -168,7 +168,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8ab1cd2759c9a804b9fe3292b6127672, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -190,8 +190,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 443438198}
-  - component: {fileID: 443438197}
   - component: {fileID: 443438199}
+  - component: {fileID: 443438197}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -207,18 +207,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 443438196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62333882b2c90fb468e8dabe28dab5fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 30b065ebc6abfa64298259e571dd559f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: Hello! Nice to meet you.
-  - question: What's your name?
+  - question: Welcome Traveller, what are you looking for?
+  - question: It depends on your destination. In this part it's not always easy to
+      find the way.
+  - question: Tell me where you have to go.
+  - question: That might be a little complicated. You are not the first person that
+      came from the future. Lately this place become pretty crowded.... To leave the
+      park you must follow the instructions of people you meet, they will guide you
+      to your times.
+  - question: I'm afraid not.
+  - question: Wait Traveller, I'd like you to do one thing for me. You see.. my wife
+      is waiting for letters from me. Could you deliver them?
   answers1:
-  - answer1: Hello!
-  - answer1: Aga
+  - answer1: Nothing
+  - answer1: That may be my case.
+  - answer1: I think you can't help me, bye!
+  - answer1: Thank you, I'll do as you say, goodbye!
+  - answer1: Goodbye.
+  - answer1: Yes, sure.
   answers2:
-  - answer2: Bye...
-  - answer2: Marek
+  - answer2: It seems as I got lost, will you help me?
+  - answer2: I need to go back to year 2018...
+  - answer2: I need to go back to year 2018...
+  - answer2: Isn't there any simpler way?
+  - answer2: Thank you for your help
+  - answer2: No, I'm in hurry, sorry...
   questionText: {fileID: 1726043253}
   answer1Text: {fileID: 1348269113}
   answer2Text: {fileID: 450609259}
@@ -355,8 +372,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -320}
-  m_SizeDelta: {x: 600, y: 80}
+  m_AnchoredPosition: {x: 0, y: -278.31567}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &694154761
 MonoBehaviour:
@@ -656,11 +673,11 @@ RectTransform:
   m_Father: {fileID: 26458611}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 5}
-  m_SizeDelta: {x: 160, y: 100}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 75}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1009298011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,7 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.18431373, g: 0.18431373, b: 0.18431373, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -687,13 +704,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NAME
+  m_Text: JAN III SOBIESKI
 --- !u!222 &1009298012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -734,8 +751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -476}
-  m_SizeDelta: {x: 600, y: 80}
+  m_AnchoredPosition: {x: 0, y: -501.05078}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276942449
 MonoBehaviour:
@@ -1149,7 +1166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -54}
+  m_AnchoredPosition: {x: 0, y: -4}
   m_SizeDelta: {x: 600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1841542095

@@ -14,33 +14,7 @@ public class InventoryControl : MonoBehaviour {
 	[SerializeField]
 	private GridLayoutGroup gridGroup;
 
-	//del
-	/*
-	[SerializeField]
-	private Sprite[] iconSprites;
-
-	//del
-	[SerializeField]
-	private string[] itemText;
-	*/
-
 	void Start(){
-
-		///*del
-		/*
-		playerInventory = new List<Item> ();
-
-		for (int i = 0; i < 10; i++) {
-
-				Item newItem = new Item ();
-				
-				newItem.iconSprite = iconSprites [0];
-				newItem.itemName = itemText[0];
-
-				playerInventory.Add (newItem);
-			}
-		*/
-		///* del
 		GenerateInventory ();
 	}
 

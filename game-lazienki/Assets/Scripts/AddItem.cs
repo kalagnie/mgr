@@ -3,9 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AddItem : MonoBehaviour {
-		
-	// Update is called once per frame
-	public void TakeItem (int nr) {
-		GameState.Instance.AddItem (nr);
+	[SerializeField]
+	private Sprite[] iconSprites;
+
+	[SerializeField]
+	private string[] itemText;
+
+	public void AddItemToInventory(int nr){
+		GameState.playerInventory = new List<Item> ();
+		Item newItem = new Item ();
+
+		newItem.iconSprite = iconSprites [nr];
+		newItem.itemName = itemText[nr];
+
+		GameState.playerInventory.Add (newItem);
 	}
 }

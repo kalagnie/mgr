@@ -3,62 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//test
+using UnityEngine.UI;
+
 public class GameState : MonoBehaviour {
 
-	public static GameState Instance { set; get; }
+	static public GameState Instance; //The right GameStatus { set; get; }
 
 	//List of characters and list of items
 	static public List<Item> playerInventory;
 	static public List<Character> characterInventory;
 
-	[SerializeField]
-	private Sprite[] iconSprites;
+	//test
+	public Text test;
 
-	[SerializeField]
-	private string[] itemText;
-
-	[SerializeField]
-	private Sprite[] characterSprites;
-
-	[SerializeField]
-	private string[] characterText;
-
-	[SerializeField]
-	private string[] characterDescription;
-
-	public void AddItem(int nr){
-		playerInventory = new List<Item> ();
-		Item newItem = new Item ();
-
-		newItem.iconSprite = iconSprites [nr];
-		newItem.itemName = itemText[nr];
-
-		playerInventory.Add (newItem);
+	void Start(){
+		//Singleton
+		if (Instance != null) {
+			//someone else is a singleton already => destroy ourselves
+			Destroy(this.gameObject);
+			return;
+		}
+		//we are the one
+		Instance = this;
+		//GameObject.FindObjectOfType<GameState>();
+		GameObject.DontDestroyOnLoad (this.gameObject);
 	}
 
-	public void AddCharacter(int nr){
-		characterInventory = new List<Character> ();
-		Character newCharacter = new Character ();
+	void Update(){
+		//test.text = playerInventory.GetEnumerator.toString ();
+		foreach (Item newItem in GameState.playerInventory) {
+			test.text += newItem.itemName + "/n";
+		}
+	}
 
-		newCharacter.characterSprite = characterSprites [nr];
-		newCharacter.characterName = characterText[nr];
-		newCharacter.characterInfo = characterDescription[nr];
-
-		characterInventory.Add (newCharacter);
+	void OnDestroy(){
+		Debug.Log ("GameStatus was destroyed");
 	}
 		
-	//static GameState TheRightGameStatus;
-
-	//void Start(){
-	//	if (TheRightGameStatus != null) {
-	//		//I am not the one => destroy
-	//		Destroy(this.gameObject);
-	//		return;
-	//	}
-
-		//I am the one
-	//	TheRightGameStatus = this;
-	//	GameObject.DontDestroyOnLoad (this.gameObject);
-	//}
-
 }

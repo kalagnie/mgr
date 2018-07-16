@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InventoryControl : MonoBehaviour {
 
-
 	//public List<Item> playerInventory;
 
 	[SerializeField]
@@ -17,7 +16,7 @@ public class InventoryControl : MonoBehaviour {
 	void Start(){
 		GenerateInventory ();
 	}
-
+		
 	void GenerateInventory(){
 		int i = 1;
 		foreach (Item newItem in GameState.playerInventory){
@@ -28,8 +27,9 @@ public class InventoryControl : MonoBehaviour {
 			item.GetComponent <InventoryItem>().SetText (newItem.itemName);
 			item.GetComponent <InventoryItem> ().SetIcon (newItem.iconSprite);
 
-			item.transform.SetParent (itemTemplate.transform.parent, false); //parent the same as for  itemTemplate
+			item.transform.SetParent (itemTemplate.transform.parent, false); //parent the same as for itemTemplate
 			i++;
 		}
 	}
+
 }

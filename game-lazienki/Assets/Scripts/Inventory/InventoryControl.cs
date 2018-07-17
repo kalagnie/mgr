@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InventoryControl : MonoBehaviour {
 
-
 	//public List<Item> playerInventory;
 
 	[SerializeField]
@@ -14,39 +13,23 @@ public class InventoryControl : MonoBehaviour {
 	[SerializeField]
 	private GridLayoutGroup gridGroup;
 
-	//del
-	/*
-	[SerializeField]
-	private Sprite[] iconSprites;
-
-	//del
-	[SerializeField]
-	private string[] itemText;
-	*/
-
 	void Start(){
-
-		///*del
-		/*
-		playerInventory = new List<Item> ();
-
-		for (int i = 0; i < 10; i++) {
-
-				Item newItem = new Item ();
-				
-				newItem.iconSprite = iconSprites [0];
-				newItem.itemName = itemText[0];
-
-				playerInventory.Add (newItem);
-			}
-		*/
-		///* del
 		GenerateInventory ();
 	}
-
+		
 	void GenerateInventory(){
 		int i = 1;
-		foreach (Item newItem in GameState.playerInventory){
+		GameObject go = GameObject.Find("GameState");
+		if(go == null){
+			Debug.LogError("Failed to find 'GameState' object");
+			this.enabled = false;
+			return;
+		}
+
+		GameState gs = go.GetComponent<GameState>();
+		List<Item> inventory = gs.getPlayerInventory ();
+
+		foreach (Item newItem in inventory){
 			GameObject item = Instantiate (itemTemplate) as GameObject;
 			item.SetActive (true);
 
@@ -54,8 +37,9 @@ public class InventoryControl : MonoBehaviour {
 			item.GetComponent <InventoryItem>().SetText (newItem.itemName);
 			item.GetComponent <InventoryItem> ().SetIcon (newItem.iconSprite);
 
-			item.transform.SetParent (itemTemplate.transform.parent, false); //parent the same as for  itemTemplate
+			item.transform.SetParent (itemTemplate.transform.parent, false); //parent the same as for itemTemplate
 			i++;
 		}
 	}
+
 }

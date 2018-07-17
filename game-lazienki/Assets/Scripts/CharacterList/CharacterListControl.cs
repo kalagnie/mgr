@@ -37,10 +37,11 @@ public class CharacterListControl : MonoBehaviour {
 			characterInventory.Add (newCharacter);
 		}
 		*/
-		///*del
+
+
 		GenerateCharacterInventory ();
 	}
-
+		
 	void GenerateCharacterInventory(){
 		int i = 1;
 		foreach (Character newCharacter in GameState.characterInventory){
@@ -55,5 +56,6 @@ public class CharacterListControl : MonoBehaviour {
 			item.transform.SetParent (characterTemplate.transform.parent, false); //parent the same as for  itemTemplate
 			i++;
 		}
+
 	}
 }

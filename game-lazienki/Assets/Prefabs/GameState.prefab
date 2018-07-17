@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1710915364231860}
+  m_IsPrefabParent: 1
+--- !u!1 &1710915364231860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4475673800717420}
+  - component: {fileID: 114067117230671304}
+  m_Layer: 0
+  m_Name: GameState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4475673800717420
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1710915364231860}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114067117230671304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1710915364231860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88979cee3c3236b4f8c3e8a4f1e2fdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: []
+  characterInventory: []
+  iconSprites:
+  - {fileID: 21300000, guid: f671e48ec0d624e4a8062dde382f7931, type: 3}
+  - {fileID: 21300000, guid: f2abbaa2790f86f47977297e7c9574c2, type: 3}
+  - {fileID: 21300000, guid: 1ca1939faf2c72042b775b07beb8301b, type: 3}
+  - {fileID: 21300000, guid: 4f4c197bd26f6d8438b10ac9e6cd46e8, type: 3}
+  - {fileID: 21300000, guid: 4f4c197bd26f6d8438b10ac9e6cd46e8, type: 3}
+  itemText:
+  - COINS
+  - MEDAL 1
+  - MEDAL 2
+  - MUSIC 1
+  - MUSIC 2
+  characterSprites:
+  - {fileID: 21300000, guid: e4bddb0bd76578540a0696d009747b60, type: 3}
+  - {fileID: 21300000, guid: 1403dcf649a6196468b6a6dba2fcd85c, type: 3}
+  - {fileID: 21300000, guid: d7d58dca547ff124f90d83d59603ae5f, type: 3}
+  - {fileID: 21300000, guid: 97c132f681e83f54d9e83383574723ec, type: 3}
+  characterText:
+  - Chopin
+  - Mickiewicz
+  - Sobieski
+  - "Stanis\u0142aw August"
+  characterDescription:
+  - Text about Chopin
+  - Text about Mickiewicz
+  - Text about Sobieski
+  - "Text about Stanis\u0142aw August"
+  test: {fileID: 0}

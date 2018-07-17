@@ -226,20 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00d90e90274d7549bb4a60c9f6fbc2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: []
   itemTemplate: {fileID: 1342293917}
   gridGroup: {fileID: 737543694}
-  iconSprites:
-  - {fileID: 21300000, guid: f671e48ec0d624e4a8062dde382f7931, type: 3}
-  - {fileID: 21300000, guid: cf5cb48928cf6d048a9abec778d16b6f, type: 3}
-  - {fileID: 21300000, guid: f2abbaa2790f86f47977297e7c9574c2, type: 3}
-  - {fileID: 21300000, guid: 1ca1939faf2c72042b775b07beb8301b, type: 3}
-  itemText:
-  - MEDAL
-  - CROWN
-  - APPLE
-  - SCEPTRE
-  things: 
 --- !u!1 &273777620
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +355,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 200, y: 200}
@@ -508,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6838235, g: 0.45253026, b: 0.45253026, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -565,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -100}
+  m_AnchoredPosition: {x: 100, y: -100}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1342293919
@@ -634,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.01969484, g: 0.1397059, b: 0.015408737, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

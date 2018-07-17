@@ -14,14 +14,15 @@ public class AddCharacter : MonoBehaviour {
 	private string[] characterDescription;
 
 	public void AddCharacterToInventory(int nr){
-		GameState.characterInventory = new List<Character> ();
-		Character newCharacter = new Character ();
+		GameObject go = GameObject.Find("GameState");
+		if(go == null){
+			Debug.LogError("Failed to find 'GameState' object");
+			this.enabled = false;
+			return;
+		}
 
-		newCharacter.characterSprite = characterSprites [nr];
-		newCharacter.characterName = characterText[nr];
-		newCharacter.characterInfo = characterDescription[nr];
-
-		GameState.characterInventory.Add (newCharacter);
+		GameState gs = go.GetComponent<GameState>();
+		gs.addCharacter (characterSprites [nr], characterText[nr], characterDescription[nr]);
 	}
 
 }

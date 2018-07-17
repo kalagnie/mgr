@@ -19,7 +19,17 @@ public class InventoryControl : MonoBehaviour {
 		
 	void GenerateInventory(){
 		int i = 1;
-		foreach (Item newItem in GameState.playerInventory){
+		GameObject go = GameObject.Find("GameState");
+		if(go == null){
+			Debug.LogError("Failed to find 'GameState' object");
+			this.enabled = false;
+			return;
+		}
+
+		GameState gs = go.GetComponent<GameState>();
+		List<Item> inventory = gs.getPlayerInventory ();
+
+		foreach (Item newItem in inventory){
 			GameObject item = Instantiate (itemTemplate) as GameObject;
 			item.SetActive (true);
 

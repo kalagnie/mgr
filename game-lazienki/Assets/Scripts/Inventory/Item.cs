@@ -10,6 +10,9 @@ public class Item : MonoBehaviour {
 
 	//public ItemType itemType;
 
+	public string returnName(){
+		return itemName;
+	}
 	/*
 	public enum ItemType{
 		Weapon,

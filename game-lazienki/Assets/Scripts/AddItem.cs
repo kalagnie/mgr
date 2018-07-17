@@ -10,12 +10,14 @@ public class AddItem : MonoBehaviour {
 	private string[] itemText;
 
 	public void AddItemToInventory(int nr){
-		GameState.playerInventory = new List<Item> ();
-		Item newItem = new Item ();
+		GameObject go = GameObject.Find("GameState");
+		if(go == null){
+			Debug.LogError("Failed to find 'GameState' object");
+			this.enabled = false;
+			return;
+		}
 
-		newItem.iconSprite = iconSprites [nr];
-		newItem.itemName = itemText[nr];
-
-		GameState.playerInventory.Add (newItem);
+		GameState gs = go.GetComponent<GameState>();
+		gs.addItem (iconSprites [nr], itemText[nr]);
 	}
 }

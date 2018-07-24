@@ -33,7 +33,7 @@ public class SobieskiQuestionManager : MonoBehaviour {
 
 	// Czas pomiedzy odpowiedziami
 	[SerializeField]
-	private float TimeBetweenQuestions = 1f;
+	private float TimeBetweenQuestions = 0.1f;
 
 	void Start(){
 		Debug.Log ("Start");
@@ -103,6 +103,5 @@ public class SobieskiQuestionManager : MonoBehaviour {
 		}
 		else
 			StartCoroutine(TransitionToNextQuestion());
-
 	}
 }

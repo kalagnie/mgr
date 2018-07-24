@@ -16,6 +16,9 @@ public class GameState : MonoBehaviour {
 	static public List<Item> playerInventory;
 	static public List<Character> characterInventory;
 
+	//visited objects
+	static public bool visitedSobieski;
+
 	void Start(){
 		//Singleton
 		if (Instance != null) {
@@ -29,6 +32,8 @@ public class GameState : MonoBehaviour {
 		GameObject.DontDestroyOnLoad (this.gameObject);
 		playerInventory = new List<Item> ();
 		GameState.characterInventory = new List<Character> ();
+
+		visitedSobieski = false;
 	}
 		
 	void OnDestroy(){

@@ -210,32 +210,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - Q0
-  - Q1
-  - Q2
-  - Q3
-  - Q4
-  - Q5
-  - Q6
-  - Q7
+  - Welcome Traveller, what are you looking for?
+  - Where are you heading to?
+  - Hmm... you are not the first person with a problem like that. I'll help you, but
+    you have to follow my instructions.
+  - If you are not going to tell me, I can't help you.
+  - All you need to do is few small favours.
+  - To start with, please take these letters and deliver them to my wife.
+  - Hello again, did you deliver my mail?
+  - Thank you. Take this small gift as a proof of my gratitude.
   answers1:
-  - A0
-  - A1
-  - A2
-  - A3
-  - A4
-  - A5
-  - A6
-  - A7
+  - Nothing.
+  - It's not a place.. I need to go back to the future, to my times.
+  - What do you mean?
+  - The problem is that... I'm from the future.
+  - Naturally, what do you want me to do?
+  - Ok, you can count on me!
+  - No, not yet.
+  - Thank you.
   answers2:
-  - A0
-  - A1
-  - A2
-  - A3
-  - A4
-  - A5
-  - A6
-  - A7
+  - It seems as I got lost. Will you help me?
+  - Uhm, It's more complicated.
+  - Sure, what should I do?
+  - Then I'm sorry for wasting your time. Goodbye.
+  - Thatk you, but I'm going to look for an easier way.
+  - 
+  - Yes.
+  - 
   questionText: {fileID: 1726043253}
   answer1Button: {fileID: 694154761}
   answer2Button: {fileID: 1276942449}

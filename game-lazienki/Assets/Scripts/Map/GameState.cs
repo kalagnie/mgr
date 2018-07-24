@@ -17,7 +17,7 @@ public class GameState : MonoBehaviour {
 	static public List<Character> characterInventory;
 
 	//visited objects
-	static public bool visitedSobieski;
+	static public int visitedSobieski;
 
 	void Start(){
 		//Singleton
@@ -33,7 +33,7 @@ public class GameState : MonoBehaviour {
 		playerInventory = new List<Item> ();
 		GameState.characterInventory = new List<Character> ();
 
-		visitedSobieski = false;
+		visitedSobieski = 0;
 	}
 		
 	void OnDestroy(){

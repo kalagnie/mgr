@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SobieskiQuestion : MonoBehaviour {
 
+	//listy z pytaniami i odpowiedzimi
 	public string[] questions;
 	public string[] answers1;
 	public string[] answers2;
@@ -15,15 +17,32 @@ public class SobieskiQuestion : MonoBehaviour {
 	public Button answer1Button;
 	public Button answer2Button;
 
+	//item
+	public Sprite[] itemIcon;
+	public Image item;
+	public GameObject takeItemPanel;
+	public GameObject takeItemPanel2;
+
+	AddItem a;
+
 	private int currentText = 0;
 
 	// Use this for initialization
 	void Start () {
-		if (GameState.visitedSobieski == 1) {
+		GameObject go = GameObject.Find("GameState");
+		if(go == null){
+			Debug.LogError("Failed to find 'GameState' object");
+			this.enabled = false;
+			return;
+		}
+
+		GameState gs = go.GetComponent<GameState>();
+
+		if (gs.returnSobieski() == 1) {
 			answer2Button.gameObject.SetActive (true);
 			currentText = 6;
 		}
-
+			
 		updateText ();
 	}
 	
@@ -37,32 +56,56 @@ public class SobieskiQuestion : MonoBehaviour {
 		answer1Button.GetComponentInChildren<Text>().text= answers1 [currentText];
 		answer2Button.GetComponentInChildren<Text>().text = answers2 [currentText];
 
+		//test
 		if(currentText == 6)
 			answer2Button.gameObject.SetActive (true);
 	}
 
 	public void answer1Selected(){
-		if (currentText == 0 || currentText == 6 || currentText == 7)
-			Debug.Log ("EXIT");
-			//SceneManager.LoadScene (1);
+		if (currentText == 0 || currentText == 6)
+			SceneManager.LoadScene (1);
+			//Debug.Log ("EXIT");
 		else if (currentText == 2)
 			currentText = currentText + 2;
-		//else if(currentText == 7)
-		//okienko
 		else if (currentText == 3)
 			currentText = currentText - 1;
 		else if (currentText == 4) {
 			currentText = currentText + 1;
 			answer2Button.gameObject.SetActive (false);
 		}
+		else if (currentText == 5) {
+			takeItemPanel.gameObject.SetActive (true);
+			GameObject go = GameObject.Find("GameState");
+			if(go == null){
+				Debug.LogError("Failed to find 'GameState' object");
+				this.enabled = false;
+				return;
+			}
+
+			GameState gs = go.GetComponent<GameState>();
+			gs.updateSobieski (1);
+		}
+		else if(currentText == 7) {
+			takeItemPanel2.gameObject.SetActive (true);
+			GameObject go = GameObject.Find("GameState");
+			if(go == null){
+				Debug.LogError("Failed to find 'GameState' object");
+				this.enabled = false;
+				return;
+			}
+
+			GameState gs = go.GetComponent<GameState>();
+			gs.updateSobieski (2);
+		}
+
 		else if (currentText < 7)
 				currentText = currentText + 1;			
 	}
 
 	public void answer2Selected(){
 		if (currentText == 3 || currentText == 4)
-			Debug.Log ("EXIT");
-			//SceneManager.LoadScene (1);
+			//Debug.Log ("EXIT");
+			SceneManager.LoadScene (1);
 		else if (currentText == 1)
 			currentText = 3;
 		else if (currentText == 2) {

@@ -27,6 +27,7 @@ public class GPS : MonoBehaviour {
 	double fi2 = 52.17731867467772;
 	double lambda2 = 21.05153060884163;
 
+	/*
 	double ChopinF = 52.214703;
 	double ChopinL = 21.028105;
 
@@ -38,6 +39,7 @@ public class GPS : MonoBehaviour {
 
 	double StanislawF = 52.215630;
 	double StanislawL = 21.031462;
+	*/
 
 	double PalacNaWodzieF = 52.215069;
 	double PalacNaWodzieL = 21.035814;
@@ -88,20 +90,37 @@ public class GPS : MonoBehaviour {
 	}
 
 	private void checkObjects(){
+		GameObject go = GameObject.Find("GameState");
+		if(go == null){
+			Debug.LogError("Failed to find 'GameState' object");
+			this.enabled = false;
+			return;
+		}
+
+		GameState gs = go.GetComponent<GameState>();
+
 		//test
 		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
-		buttonActivation (Chopin, fi2, lambda2);
+		characterActivation (Sobieski, fi2, lambda2, gs.returnSobieski ());
 
-		//buttonActivation (Chopin, ChopinF, ChopinL);
-		buttonActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL);
-		buttonActivation (Sobieski, SobieskiF, SobieskiL);
-		buttonActivation (Stanislaw, StanislawF, StanislawL);
-
-		buttonActivation (PalacNaWodzie, PalacNaWodzieF, PalacNaWodzieL);
-		buttonActivation (BialyDomek, BialyDomekF, BialyDomekL);
+		/*
+		characterActivation (Chopin, ChopinF, ChopinL);
+		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL);
+		characterActivation (Sobieski, SobieskiF, SobieskiL);
+		characterActivation (Stanislaw, StanislawF, StanislawL);
+		*/
+		placeActivation (PalacNaWodzie, PalacNaWodzieF, PalacNaWodzieL);
+		placeActivation (BialyDomek, BialyDomekF, BialyDomekL);
 	}
 
-	private void buttonActivation(Button b, double f, double l){
+	private void characterActivation(Button b, double f, double l, int visited){
+		if (CalculatingDistance (latitude, longitude, f, l) && (visited != 2))
+			b.interactable = true;
+		else
+			b.interactable = false;
+	}
+
+	private void placeActivation(Button b, double f, double l){
 		if (CalculatingDistance (latitude, longitude, f, l))
 			b.interactable = true;
 		else

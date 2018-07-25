@@ -14,6 +14,7 @@ public class AddCharacter : MonoBehaviour {
 	private string[] characterDescription;
 
 	public void AddCharacterToInventory(int nr){
+
 		GameObject go = GameObject.Find("GameState");
 		if(go == null){
 			Debug.LogError("Failed to find 'GameState' object");
@@ -22,7 +23,9 @@ public class AddCharacter : MonoBehaviour {
 		}
 
 		GameState gs = go.GetComponent<GameState>();
-		gs.addCharacter (characterSprites [nr], characterText[nr], characterDescription[nr]);
+
+		if ((nr == 0 && gs.returnChopin() == 0) || (nr == 1 && gs.returnSienkiewicz() == 0) || (nr == 2 && gs.returnSobieski() == 0) || (nr == 3 && gs.returnStanislaw() == 0))
+			gs.addCharacter (characterSprites [nr], characterText[nr], characterDescription[nr]);
 	}
 
 }

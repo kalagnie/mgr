@@ -12,36 +12,50 @@ public class GPS : MonoBehaviour {
 	public double longitude;
 	public bool isCloseEnough;
 
-	int xTiles = 15;
-	int yTiles = 10;
-	public int[ , ] mapOfObjects;
-	int range = 3;
+	//przyciski
+	public Button Chopin;
+	public Button Sienkiewicz;
+	public Button Sobieski;
+	public Button Stanislaw;
 
-	//Łazienki
+	public Button PalacNaWodzie;
+	public Button BialyDomek;
+
+	//wspolrzedne punktow
+
+	//dom
+	double fi2 = 52.17731867467772;
+	double lambda2 = 21.05153060884163;
+
 	/*
-	double GPSVerticalStart = 52.207076;
-	double GPSVerticalEnd = 52.224560;
-	double GPSHorizontalStart = 21.024422;
-	double GPSHorizontalEnd = 21.045240;
+	double ChopinF = 52.214703;
+	double ChopinL = 21.028105;
+
+	double SienkiewiczF = 52.215659;
+	double SienkiewiczL = 21.027031;
+
+	double SobieskiF = 52.217499;
+	double SobieskiL = 21.035456;
+
+	double StanislawF = 52.215630;
+	double StanislawL = 21.031462;
 	*/
 
-	//test dom
-	double GPSVerticalStart = 52.178453;
-	double GPSVerticalEnd = 52.176407;
-	double GPSHorizontalStart = 21.048095;
-	double GPSHorizontalEnd = 21.052783;
+	double PalacNaWodzieF = 52.215069;
+	double PalacNaWodzieL = 21.035814;
+
+	double BialyDomekF = 52.215314;
+	double BialyDomekL = 21.031519;
 
 	//test
-	//public Text test;
-	//public Text testH;
-	public Text test2;
+	public Text test;
+	public Text testH;
 
 	private void Start () {
 		Instance = this;
 		DontDestroyOnLoad (gameObject);
 		StartCoroutine (StartLocationService ());
 
-		fillInTheMap ();
 	}
 
 	private IEnumerator StartLocationService(){
@@ -70,46 +84,49 @@ public class GPS : MonoBehaviour {
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 
-		//isCloseEnough = CalculatingDistance (latitude, longitude);
-		isCloseEnough = CheckForAvailability(latitude, longitude);
+		checkObjects ();
+
 		yield break;
 	}
 
-	private void fillInTheMap ()
-	{
-		//0 - puste
-		//1, 2, 3, ... 10 - postaci
-		//11, ..., 20 - miejsca/architektura
-		//21, ..., 30 - obiejty
-
-		mapOfObjects = new int [xTiles, yTiles];
-
-		mapOfObjects [0, 0] = 1; //np. Mickiewicz
-		mapOfObjects [7, 2] = 2; //np. Chopin
-		mapOfObjects [15, 10] = 3; //np. Chopin
-		//...
-
-	}
-
-	private bool CheckForAvailability(double lat, double lon){
-
-		double xTileSize = (GPSVerticalEnd - GPSVerticalStart)/xTiles;
-		double yTileSize = (GPSHorizontalEnd - GPSHorizontalStart)/yTiles;
-		int playerTilex = Convert.ToInt32(Math.Floor((lat - GPSVerticalStart)/xTileSize));
-		int playerTiley = Convert.ToInt32(Math.Floor((lon - GPSHorizontalStart)/yTileSize));
-
-
-		for(int i = playerTilex - range; i<=playerTilex + range; i++){ //xTiles
-			for (int j = playerTiley - range; j<=playerTiley + range; j++){ //yTiles
-				if (mapOfObjects [i, j] != 0)
-					return true;
-				test2.text = "Tile: " + i + ", " + j + "\n x = (" + i * xTileSize + ", " + i * xTileSize + xTileSize + ") /n y = (" +  + i * yTileSize + ", " + i * yTileSize + yTileSize + ")";
-			}
+	private void checkObjects(){
+		GameObject go = GameObject.Find("GameState");
+		if(go == null){
+			Debug.LogError("Failed to find 'GameState' object");
+			this.enabled = false;
+			return;
 		}
-		return false;
+
+		GameState gs = go.GetComponent<GameState>();
+
+		//test
+		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
+		characterActivation (Sobieski, fi2, lambda2, gs.returnSobieski ());
+
+		/*
+		characterActivation (Chopin, ChopinF, ChopinL);
+		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL);
+		characterActivation (Sobieski, SobieskiF, SobieskiL);
+		characterActivation (Stanislaw, StanislawF, StanislawL);
+		*/
+		placeActivation (PalacNaWodzie, PalacNaWodzieF, PalacNaWodzieL);
+		placeActivation (BialyDomek, BialyDomekF, BialyDomekL);
 	}
 
-	/*
+	private void characterActivation(Button b, double f, double l, int visited){
+		if (CalculatingDistance (latitude, longitude, f, l) && (visited != 2))
+			b.interactable = true;
+		else
+			b.interactable = false;
+	}
+
+	private void placeActivation(Button b, double f, double l){
+		if (CalculatingDistance (latitude, longitude, f, l))
+			b.interactable = true;
+		else
+			b.interactable = false;
+	}
+
 	private double CosineLaw(double fi1, double lambda1, double fi2, double lambda2, double R){
 		var deltaLambda = lambda1 - lambda2;
 		var cosc = Math.Sin (fi1) * Math.Sin (fi2) + Math.Cos (fi1) * Math.Cos (fi2) * Math.Cos (deltaLambda);
@@ -131,12 +148,7 @@ public class GPS : MonoBehaviour {
 		return distance;
 	}
 
-	private bool CalculatingDistance (double fi1, double lambda1){
-		//zdefiniowany punkt, do ktorego mierzymy odleglosc
-		//var fi2 = 52.17731867467772;
-		//var lambda2 = 21.05153060884163;
-		var fi2 = 52.17696367924449;
-		var lambda2 = 21.035835875788166;
+	private bool CalculatingDistance (double fi1, double lambda1, double fi2, double lambda2){
 
 		var R = 6378.137; //promien Ziemi w km
 
@@ -145,14 +157,14 @@ public class GPS : MonoBehaviour {
 
 
 		//Haversine
-		if (distance <= 10.0) {
+		if (distance <= 2.0) {
 			testH.text = "Haversine\n" + d + " true";
 		} else {
 			testH.text = "Haversine\n" + d + " false";
 		}
 
 		//Cosine Law
-		if (distance <= 10.0) {
+		if (distance <= 2.0) {
 			Debug.Log ("true");
 			test.text = "Cosine Law\n" + distance + " true";
 			return true;
@@ -162,13 +174,12 @@ public class GPS : MonoBehaviour {
 		}
 
 	}
-	*/
+
 	private void Update(){
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 
-		isCloseEnough = CheckForAvailability(latitude, longitude);
-		//isCloseEnough = CalculatingDistance (latitude, longitude);
+		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
+		checkObjects();
 	}
-
 }

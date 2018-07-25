@@ -16,6 +16,12 @@ public class GameState : MonoBehaviour {
 	static public List<Item> playerInventory;
 	static public List<Character> characterInventory;
 
+	//visited characters
+	static public int visitedChopin;
+	static public int visitedSienkiewicz;
+	static public int visitedSobieski;
+	static public int visitedStanislaw;
+
 	void Start(){
 		//Singleton
 		if (Instance != null) {
@@ -29,6 +35,11 @@ public class GameState : MonoBehaviour {
 		GameObject.DontDestroyOnLoad (this.gameObject);
 		playerInventory = new List<Item> ();
 		GameState.characterInventory = new List<Character> ();
+
+		visitedChopin = 0;
+		visitedSienkiewicz = 0;
+		visitedSobieski = 0;
+		visitedStanislaw = 0;
 	}
 		
 	void OnDestroy(){
@@ -56,6 +67,39 @@ public class GameState : MonoBehaviour {
 		characterInventory.Add (newCharacter);
 	}
 
+	//update character status
+	public void updateChopin(int n){
+		visitedChopin = n;
+	}
+
+	public void updateSienkiewicz(int n){
+		visitedSienkiewicz = n;
+	}
+
+	public void updateSobieski(int n){
+		visitedSobieski = n;
+	}
+
+	public void updateStanislaw(int n){
+		visitedStanislaw = n;
+	}
+		
+	//return character status
+	public int returnChopin(){
+		return visitedSobieski;
+	}
+
+	public int returnSienkiewicz(){
+		return visitedSobieski;
+	}
+
+	public int returnSobieski(){
+		return visitedSobieski;
+	}
+
+	public int returnStanislaw(){
+		return visitedSobieski;
+	}
 
 	//test
 	public List<Item> getPlayerInventory(){

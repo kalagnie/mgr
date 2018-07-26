@@ -117,7 +117,8 @@ public class GPS : MonoBehaviour {
 		if (CalculatingDistance (latitude, longitude, f, l) && (visited != 2))
 			b.interactable = true;
 		else
-			b.interactable = false;
+			b.interactable = true; //for testing
+			//b.interactable = false;
 	}
 
 	private void placeActivation(Button b, double f, double l){

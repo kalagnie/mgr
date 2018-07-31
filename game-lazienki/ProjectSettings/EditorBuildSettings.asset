@@ -6,26 +6,50 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/MainScenes/Menu.unity
     guid: 838f8f8a5111e2e419baedfa18500891
   - enabled: 1
-    path: Assets/Scenes/Map.unity
+    path: Assets/Scenes/MainScenes/Map.unity
     guid: c13aa1b1ac79cda4699286c2a7e36d91
   - enabled: 1
-    path: Assets/Scenes/Inventory.unity
+    path: Assets/Scenes/MainScenes/Inventory.unity
     guid: bc4cfe70a6e24fe4c86f645b58bc6fa0
   - enabled: 1
-    path: Assets/Scenes/List.unity
+    path: Assets/Scenes/MainScenes/List.unity
     guid: bb5d4fc9710df4b469bac8e30cce1789
   - enabled: 1
-    path: Assets/Scenes/About.unity
+    path: Assets/Scenes/MainScenes/About.unity
     guid: d4a1b1f14ab851049ba8a50d953a3d64
   - enabled: 1
-    path: Assets/Scenes/Sobieski.unity
+    path: Assets/Scenes/Characters/Sobieski.unity
     guid: 1383619d71fcfa746810bcbe2e6ee96a
   - enabled: 1
-    path: Assets/Scenes/SwiatyniaSybilli.unity
+    path: Assets/Scenes/Places/SwiatyniaSybilli.unity
     guid: ecad1dede3b1cbe409769b4ff13e313b
   - enabled: 1
-    path: Assets/Scenes/SLAM.unity
+    path: Assets/Scenes/Objects/SLAM.unity
     guid: 392413b0312ccfa479201cb822b4953a
+  - enabled: 1
+    path: Assets/Scenes/Architecture.unity
+    guid: 4aaabeee3ffa1d547acca4ff4cda6514
+  - enabled: 1
+    path: Assets/Scenes/Places/StaraKordegarda.unity
+    guid: e4f282a15a5727744912122a7d644cef
+  - enabled: 1
+    path: Assets/Scenes/Places/PalacNaWyspie.unity
+    guid: 1ed7f1e7f32fb284fad790561942763e
+  - enabled: 1
+    path: Assets/Scenes/Places/PalacMyslewicki.unity
+    guid: 74988a0b3436b324d86174d45311b0b7
+  - enabled: 1
+    path: Assets/Scenes/Places/Kartusz.unity
+    guid: 25e861ef9e1c15d44b416089cb08ac34
+  - enabled: 1
+    path: Assets/Scenes/Places/BialyDomek.unity
+    guid: 3e9af645fcadfea4baa387873bbf14e6
+  - enabled: 1
+    path: Assets/Scenes/Characters/Stanislaw.unity
+    guid: 1680d3551be2d4a4da290f6c562a7f9e
+  - enabled: 0
+    path: Assets/Scenes/ImageTracking.unity
+    guid: 986870b7f13754440adc9d0498d0b0c2

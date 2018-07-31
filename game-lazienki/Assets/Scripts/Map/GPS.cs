@@ -18,8 +18,12 @@ public class GPS : MonoBehaviour {
 	public Button Sobieski;
 	public Button Stanislaw;
 
-	public Button PalacNaWodzie;
+	public Button PalacNaWyspie;
 	public Button BialyDomek;
+	public Button Kartusz;
+	public Button StaraKordegarda;
+	public Button PalacMyslewicki;
+	public Button SwiatyniaSybilli;
 
 	//wspolrzedne punktow
 
@@ -27,7 +31,7 @@ public class GPS : MonoBehaviour {
 	double fi2 = 52.17731867467772;
 	double lambda2 = 21.05153060884163;
 
-	/*
+	//character's coordinations
 	double ChopinF = 52.214703;
 	double ChopinL = 21.028105;
 
@@ -39,13 +43,25 @@ public class GPS : MonoBehaviour {
 
 	double StanislawF = 52.215630;
 	double StanislawL = 21.031462;
-	*/
 
-	double PalacNaWodzieF = 52.215069;
-	double PalacNaWodzieL = 21.035814;
+	//place's coordinations
+	double PalacNaWyspieF = 52.215069;
+	double PalacNaWyspieL = 21.035814;
 
 	double BialyDomekF = 52.215314;
 	double BialyDomekL = 21.031519;
+
+	double KartuszF = 52.215069;
+	double KartuszL = 21.035814;
+
+	double StaraKordegardaF = 52.215069;
+	double StaraKordegardaL = 21.035814;
+
+	double PalacMyslewickiF = 52.215069;
+	double PalacMyslewickiL = 21.035814;
+
+	double SwiatyniaSybilliF = 52.215069;
+	double SwiatyniaSybilliL = 21.035814;
 
 	//test
 	public Text test;
@@ -103,14 +119,18 @@ public class GPS : MonoBehaviour {
 		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
 		characterActivation (Sobieski, fi2, lambda2, gs.returnSobieski ());
 
-		/*
-		characterActivation (Chopin, ChopinF, ChopinL);
-		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL);
-		characterActivation (Sobieski, SobieskiF, SobieskiL);
-		characterActivation (Stanislaw, StanislawF, StanislawL);
-		*/
-		placeActivation (PalacNaWodzie, PalacNaWodzieF, PalacNaWodzieL);
+
+		characterActivation (Chopin, ChopinF, ChopinL, gs.returnChopin());
+		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL, gs.returnSienkiewicz());
+		characterActivation (Sobieski, SobieskiF, SobieskiL, gs.returnSobieski());
+		characterActivation (Stanislaw, StanislawF, StanislawL, gs.returnStanislaw());
+
+		placeActivation (PalacNaWyspie, PalacNaWyspieF, PalacNaWyspieL);
 		placeActivation (BialyDomek, BialyDomekF, BialyDomekL);
+		placeActivation (Kartusz, KartuszF, KartuszL);
+		placeActivation (StaraKordegarda, PalacMyslewickiF, PalacMyslewickiL);
+		placeActivation (PalacMyslewicki, PalacMyslewickiF, PalacMyslewickiL);
+		placeActivation (SwiatyniaSybilli, SwiatyniaSybilliF, SwiatyniaSybilliL);
 	}
 
 	private void characterActivation(Button b, double f, double l, int visited){
@@ -125,7 +145,8 @@ public class GPS : MonoBehaviour {
 		if (CalculatingDistance (latitude, longitude, f, l))
 			b.interactable = true;
 		else
-			b.interactable = false;
+			b.interactable = true; //for testing
+			//b.interactable = false;
 	}
 
 	private double CosineLaw(double fi1, double lambda1, double fi2, double lambda2, double R){

@@ -21,6 +21,7 @@ public class GameState : MonoBehaviour {
 	static public int visitedSienkiewicz;
 	static public int visitedSobieski;
 	static public int visitedStanislaw;
+	static public int visitedLwy;
 
 	void Start(){
 		//Singleton
@@ -40,6 +41,7 @@ public class GameState : MonoBehaviour {
 		visitedSienkiewicz = 0;
 		visitedSobieski = 0;
 		visitedStanislaw = 0;
+		visitedLwy = 0;
 	}
 		
 	void OnDestroy(){
@@ -83,6 +85,10 @@ public class GameState : MonoBehaviour {
 	public void updateStanislaw(int n){
 		visitedStanislaw = n;
 	}
+
+	public void updateLwy(int n){
+		visitedLwy = n;
+	}
 		
 	//return character status
 	public int returnChopin(){
@@ -99,6 +105,10 @@ public class GameState : MonoBehaviour {
 
 	public int returnStanislaw(){
 		return visitedSobieski;
+	}
+
+	public int returnLwy(){
+		return visitedLwy;
 	}
 
 	//test

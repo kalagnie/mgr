@@ -24,6 +24,16 @@ public class GPS : MonoBehaviour {
 	public Button StaraKordegarda;
 	public Button PalacMyslewicki;
 	public Button SwiatyniaSybilli;
+	public Button SwiatyniaEgipska;
+	public Button Lwy;
+
+	public Button Gallery;
+
+	public Button Coins;
+	public Button Crown;
+
+	public Button Music1;
+	public Button Music2;
 
 	//wspolrzedne punktow
 
@@ -45,23 +55,43 @@ public class GPS : MonoBehaviour {
 	double StanislawL = 21.031462;
 
 	//place's coordinations
-	double PalacNaWyspieF = 52.215069;
-	double PalacNaWyspieL = 21.035814;
+	double PalacNaWyspieF = 52.215063;
+	double PalacNaWyspieL = 21.035809;
 
-	double BialyDomekF = 52.215314;
-	double BialyDomekL = 21.031519;
+	double BialyDomekF = 52.215320;
+	double BialyDomekL = 21.031528;
 
-	double KartuszF = 52.215069;
-	double KartuszL = 21.035814;
+	double KartuszF = 52.217065;
+	double KartuszL = 21.036387;
 
-	double StaraKordegardaF = 52.215069;
-	double StaraKordegardaL = 21.035814;
+	double StaraKordegardaF = 52.216238;
+	double StaraKordegardaL = 21.036647;
 
-	double PalacMyslewickiF = 52.215069;
-	double PalacMyslewickiL = 21.035814;
+	double PalacMyslewickiF = 52.215498;
+	double PalacMyslewickiL = 21.038291;
 
-	double SwiatyniaSybilliF = 52.215069;
-	double SwiatyniaSybilliL = 21.035814;
+	double SwiatyniaSybilliF = 52.213726;
+	double SwiatyniaSybilliL = 21.029000;
+
+	double SwiatyniaEgipskaF = 52.211166;
+	double SwiatyniaEgipskaL = 21.028991;
+
+	//items
+	double GalleryF = 52.214577;
+	double GalleryL = 21.026379;
+
+	//ogarnac
+	double CoinsF = 52.214577;
+	double CoinsL = 21.026379;
+	//ogarnac
+	double CrownF = 52.214577;
+	double CrownL = 21.026379;
+
+	double Music1F = 52.212724;
+	double Music1L = 21.031083;
+
+	double Music2F = 52.213277;
+	double Music2L = 21.028189;
 
 	//test
 	public Text test;
@@ -117,28 +147,38 @@ public class GPS : MonoBehaviour {
 
 		//test
 		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
+
 		characterActivation (Sobieski, fi2, lambda2, gs.returnSobieski ());
-
-
 		characterActivation (Chopin, ChopinF, ChopinL, gs.returnChopin());
 		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL, gs.returnSienkiewicz());
 		characterActivation (Sobieski, SobieskiF, SobieskiL, gs.returnSobieski());
 		characterActivation (Stanislaw, StanislawF, StanislawL, gs.returnStanislaw());
+		characterActivation (Lwy, SwiatyniaEgipskaF, SwiatyniaEgipskaL, gs.returnLwy());
 
 		placeActivation (PalacNaWyspie, PalacNaWyspieF, PalacNaWyspieL);
 		placeActivation (BialyDomek, BialyDomekF, BialyDomekL);
 		placeActivation (Kartusz, KartuszF, KartuszL);
-		placeActivation (StaraKordegarda, PalacMyslewickiF, PalacMyslewickiL);
+		placeActivation (StaraKordegarda, StaraKordegardaF, StaraKordegardaL);
 		placeActivation (PalacMyslewicki, PalacMyslewickiF, PalacMyslewickiL);
 		placeActivation (SwiatyniaSybilli, SwiatyniaSybilliF, SwiatyniaSybilliL);
+		placeActivation (SwiatyniaEgipska, SwiatyniaEgipskaF, SwiatyniaEgipskaL);
+
+		placeActivation (Gallery, GalleryF, GalleryL);
+		placeActivation (Coins, CoinsF, CoinsL);
+		placeActivation (Crown, CrownF, CrownL);
+
+		placeActivation (Music1, Music1F, Music1L);
+		placeActivation (Music2, Music2F, Music2L);
 	}
 
 	private void characterActivation(Button b, double f, double l, int visited){
 		if (CalculatingDistance (latitude, longitude, f, l) && (visited != 2))
 			b.interactable = true;
-		else
+		else if (CalculatingDistance (latitude, longitude, f, l))
 			b.interactable = true; //for testing
 			//b.interactable = false;
+		else
+			b.gameObject.SetActive(false); //znika z mapy
 	}
 
 	private void placeActivation(Button b, double f, double l){

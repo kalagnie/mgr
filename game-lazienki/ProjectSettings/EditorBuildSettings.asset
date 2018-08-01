@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Places/SwiatyniaSybilli.unity
     guid: ecad1dede3b1cbe409769b4ff13e313b
   - enabled: 1
-    path: Assets/Scenes/Objects/SLAM.unity
+    path: Assets/Scenes/Objects/Coins.unity
     guid: 392413b0312ccfa479201cb822b4953a
   - enabled: 1
     path: Assets/Scenes/Architecture.unity
@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Characters/Stanislaw.unity
     guid: 1680d3551be2d4a4da290f6c562a7f9e
+  - enabled: 1
+    path: Assets/Scenes/Places/SwiatyniaEgipska.unity
+    guid: 081be848d1701c9488113f95a04b8014
   - enabled: 0
     path: Assets/Scenes/ImageTracking.unity
     guid: 986870b7f13754440adc9d0498d0b0c2

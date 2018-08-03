@@ -23,7 +23,7 @@ public class SobieskiQuestion : MonoBehaviour {
 	public GameObject takeItemPanel;
 	public GameObject takeItemPanel2;
 
-	AddItem a;
+	//AddItem a;
 
 	private int currentText = 0;
 
@@ -39,8 +39,9 @@ public class SobieskiQuestion : MonoBehaviour {
 		GameState gs = go.GetComponent<GameState>();
 
 		if (gs.returnSobieski() == 1) {
-			answer2Button.gameObject.SetActive (true);
 			currentText = 6;
+			if (gs.checkForItem("Listy"))
+				answer2Button.gameObject.SetActive (false);
 		}
 			
 		updateText ();

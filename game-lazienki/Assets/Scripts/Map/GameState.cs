@@ -23,7 +23,10 @@ public class GameState : MonoBehaviour {
 	static public int visitedStanislaw;
 	static public int visitedLwy;
 
-	static public int[] checkedLions;
+	static public bool Lion1;
+	static public bool Lion2;
+	static public bool Lion3;
+	static public bool Lion4;
 
 	void Start(){
 		//Singleton
@@ -45,7 +48,10 @@ public class GameState : MonoBehaviour {
 		visitedStanislaw = 0;
 		visitedLwy = 0;
 
-		checkedLions = new int[]{0, 0, 0, 0};
+		Lion1 = false;
+		Lion2 = false;
+		Lion3 = false;
+		Lion4 = false;
 	}
 		
 	void OnDestroy(){
@@ -73,6 +79,16 @@ public class GameState : MonoBehaviour {
 		characterInventory.Add (newCharacter);
 	}
 
+	public void removeItem (string name){
+
+		int a = playerInventory.FindIndex (x => x.itemName.Equals (name));
+		playerInventory.Remove (playerInventory[a]);
+	}
+
+	public bool checkForItem(string name){
+		return playerInventory.Exists (x => x.itemName.Equals(name));
+	}
+
 	//update character status
 	public void updateChopin(int n){
 		visitedChopin = n;
@@ -94,8 +110,17 @@ public class GameState : MonoBehaviour {
 		visitedLwy = n;
 	}
 
-	public void updateCheckedLions(int i){
-		checkedLions [i] = 1;
+	public void updateLion1(){
+		Lion1 = true;
+	}
+	public void updateLion2(){
+		Lion2 = true;
+	}
+	public void updateLion3(){
+		Lion3 = true;
+	}
+	public void updateLion4(){
+		Lion4 = true;
 	}
 		
 	//return character status
@@ -118,13 +143,18 @@ public class GameState : MonoBehaviour {
 	public int returnLwy(){
 		return visitedLwy;
 	}
-
-	public int[] returnCheckedLions(){
-		return checkedLions;
+		
+	public bool returnLion1(){
+		return Lion1;
 	}
-
-	public int intLions(int i){
-		return checkedLions[i];
+	public bool returnLion2(){
+		return Lion2;
+	}
+	public bool returnLion3(){
+		return Lion3;
+	}
+	public bool returnLion4(){
+		return Lion4;
 	}
 
 	//test

@@ -423,32 +423,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - Welcome Traveller, what are you looking for?
-  - Where are you heading to?
-  - Hmm... you are not the first person with a problem like that. I'll help you, but
-    you have to follow my instructions.
-  - If you are not going to tell me, I can't help you.
-  - All you need to do is few small favours.
-  - To start with, please take these letters and deliver them to my wife.
-  - Hello again, did you deliver my mail?
-  - Thank you. Take this small gift as a proof of my gratitude.
+  - "Witaj Podr\xF3\u017Aniku, czego szukasz?"
+  - "Dok\u0105d zmierzasz?"
+  - "Hmm... nie jeste\u015B pierwsz\u0105 osob\u0105 z takim problemem. Pomog\u0119
+    Ci, ale musisz wykona\u0107 moje instrukcje."
+  - "Je\u015Bli nie zamierzasz mi powiedzie\u0107, nie mog\u0119 Ci pom\xF3c"
+  - "Musisz tylko wykona\u0107 pare zada\u0144."
+  - "Na pocz\u0105tek, prosz\u0119 dor\u0119cz te listy mojej \u017Conie."
+  - "Witaj ponownie, czy dostarczy\u0142e\u015B moje listy?"
+  - "Dzi\u0119kuj\u0119, przyjmij ode mnie ten przedmiot, w dow\xF3d mojej wdzi\u0119czno\u015Bci.
+    Jeszcze Ci si\u0119 przyda."
   answers1:
-  - Nothing.
-  - It's not a place.. I need to go back to the future, to my times.
-  - What do you mean?
-  - The problem is that... I'm from the future.
+  - Niczego.
+  - "To nie jest miejsce, musz\u0119 wr\xF3ci\u0107 do przysz\u0142o\u015Bci,m sk\u0105d
+    pochodz\u0119."
+  - "Co masz na my\u015Bli?"
+  - "Problem w tym, \u017Ce... pochodz\u0119 z przysz\u0142o\u015Bci."
   - Naturally, what do you want me to do?
-  - Ok, you can count on me!
-  - No, not yet.
-  - Thank you.
+  - "Ok, mo\u017Cesz na mnie liczy\u0107!"
+  - Nie, jeszcze nie.
+  - "Dzi\u0119kuj\u0119."
   answers2:
-  - It seems as I got lost. Will you help me?
-  - Uhm, It's more complicated.
-  - Sure, what should I do?
-  - Then I'm sorry for wasting your time. Goodbye.
-  - Thatk you, but I'm going to look for an easier way.
+  - "Wygl\u0105da na to, \u017Ce si\u0119zgubi\u0142em. Pomo\u017Cesz mi?"
+  - Uhm, to bardziej skomplikowane.
+  - "Oczywi\u015Bcie, co powinienem zrobi\u0107?"
+  - W takim raziewwybacz za zmarnowanie Twojego czasu. Do widzenia.
+  - "Dzi\u0119kuj\u0119, ale poszukam prostszego rozwi\u0105zania."
   - 
-  - Yes.
+  - Tak.
   - 
   questionText: {fileID: 1726043253}
   answer1Button: {fileID: 694154761}
@@ -498,8 +500,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 39968d0d23bd254408ec026c20bb4bcb, type: 3}
   - {fileID: 21300000, guid: 742b66f216ae8914a8462194846ff0e3, type: 3}
   itemText:
-  - Letters
-  - Apple
+  - Listy
+  - "Jab\u0142ko"
 --- !u!1 &450609257
 GameObject:
   m_ObjectHideFlags: 0

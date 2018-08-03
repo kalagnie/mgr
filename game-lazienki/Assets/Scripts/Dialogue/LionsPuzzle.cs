@@ -13,6 +13,9 @@ public class LionsPuzzle : MonoBehaviour {
 	[SerializeField]
 	private Sprite[] checkedIcons;
 
+	public Button Next;
+	public Button Resign;
+
 	// Use this for initialization
 	void Start () {
 		Lion1.image.sprite = checkedIcons [0];
@@ -32,21 +35,34 @@ public class LionsPuzzle : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		if (gs.returnCheckedLions () [0] == 1) {
+		if (gs.returnLion1()) {
 			Lion1.image.sprite = checkedIcons [1];
 			Lion1.enabled = false;
 		}
-		if (gs.returnCheckedLions () [1] == 1) {
-			Lion1.image.sprite = checkedIcons [1];
-			Lion1.enabled = false;
+		if (gs.returnLion2()) {
+			Lion2.image.sprite = checkedIcons [1];
+			Lion2.enabled = false;
 		}
-		if (gs.returnCheckedLions () [2] == 1) {
-			Lion1.image.sprite = checkedIcons [1];
-			Lion1.enabled = false;
+		if (gs.returnLion3()) {
+			Lion3.image.sprite = checkedIcons [1];
+			Lion3.enabled = false;
 		}
-		if (gs.returnCheckedLions () [3] == 1) {
-			Lion1.image.sprite = checkedIcons [1];
-			Lion1.enabled = false;
+		if (gs.returnLion4()) {
+			Lion4.image.sprite = checkedIcons [1];
+			Lion4.enabled = false;
 		}
+
+		enableNextButton (gs);
 	}
+
+	private void enableNextButton(GameState gs){
+
+		if (gs.returnLion1 () && gs.returnLion2 () && gs.returnLion2 () && gs.returnLion3 () && gs.returnLion4 ()) {
+			gs.updateLwy (1);
+			Next.gameObject.SetActive (true);
+			Resign.gameObject.SetActive (false);
+		}
+	
+	}
+	
 }

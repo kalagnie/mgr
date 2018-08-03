@@ -17,15 +17,14 @@ public class LionsQuestion : MonoBehaviour {
 	public Button answer1Button;
 	public Button answer2Button;
 
-	public GameObject Panel;
-	public GameObject puzzlePanel;
-	public Button next;
+	//test
+	public Text test;
 
 	private int currentText = 0;
 
 	// Use this for initialization
 	void Start () {
-		
+
 		GameObject go = GameObject.Find("GameState");
 		if(go == null){
 			Debug.LogError("Failed to find 'GameState' object");
@@ -37,8 +36,8 @@ public class LionsQuestion : MonoBehaviour {
 
 		if (gs.returnLwy() == 1) {
 			currentText = 3;
-			Panel.gameObject.SetActive (false);
-			puzzlePanel.gameObject.SetActive (true);
+			answer2Button.gameObject.SetActive (false);
+			test.text = gs.returnLwy ().ToString();
 		}
 
 		updateText ();
@@ -47,7 +46,6 @@ public class LionsQuestion : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		updateText ();
-		enableNextButton ();
 	}
 
 	void updateText(){
@@ -63,29 +61,12 @@ public class LionsQuestion : MonoBehaviour {
 			SceneManager.LoadScene (1);
 		} else if (currentText == 1) {
 			currentText = 3;
-			Panel.gameObject.SetActive (false);
-			puzzlePanel.gameObject.SetActive (true);
-
-			answer2Button.gameObject.SetActive (false);
+			SceneManager.LoadScene (17);
 		} else if (currentText == 2) {
-			Panel.gameObject.SetActive (false);
-			puzzlePanel.gameObject.SetActive (true);
-
-			currentText = 3;
-			answer2Button.gameObject.SetActive (false);
-
-			GameObject go = GameObject.Find("GameState");
-			if(go == null){
-				Debug.LogError("Failed to find 'GameState' object");
-				this.enabled = false;
-				return;
-			}
-
-			GameState gs = go.GetComponent<GameState>();
-			gs.updateLwy(1);
+			SceneManager.LoadScene (17);
 
 		} else if ((currentText == 3) || (currentText == 4)) {
-			currentText = currentText +1;	
+			currentText = currentText + 1;	
 		}
 		else if (currentText == 5) {
 			
@@ -97,6 +78,7 @@ public class LionsQuestion : MonoBehaviour {
 			}
 
 			GameState gs = go.GetComponent<GameState>();
+			test.text = gs.returnLwy ().ToString();
 			gs.updateLwy(2);
 			SceneManager.LoadScene (1);
 		}
@@ -110,27 +92,6 @@ public class LionsQuestion : MonoBehaviour {
 			currentText = 2;
 			answer2Button.gameObject.SetActive (false);
 		}
-	}
-
-	private void enableNextButton(){
-
-		GameObject go = GameObject.Find("GameState");
-		if(go == null){
-			Debug.LogError("Failed to find 'GameState' object");
-			this.enabled = false;
-			return;
-		}
-
-		GameState gs = go.GetComponent<GameState>();
-
-		if((gs.returnCheckedLions () [0] == 1) && (gs.returnCheckedLions () [1] == 1) && (gs.returnCheckedLions () [2] == 1) && (gs.returnCheckedLions () [3] == 1))
-			next.gameObject.SetActive (true);
-	}
-
-	public void nextButton(){
-		Panel.gameObject.SetActive (true);
-		puzzlePanel.gameObject.SetActive (false);
-		answer2Button.gameObject.SetActive (false);
 	}
 
 }

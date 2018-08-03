@@ -17,7 +17,7 @@ public class LionCorrect : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		gs.updateLwy (0);
+		gs.updateLion1 ();
 	}
 
 	public void CorrectLion2(){
@@ -30,7 +30,7 @@ public class LionCorrect : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		gs.updateLwy (1);
+		gs.updateLion2 ();
 	}
 
 	public void CorrectLion3(){
@@ -43,7 +43,7 @@ public class LionCorrect : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		gs.updateLwy (2);
+		gs.updateLion3 ();
 	}
 
 	public void CorrectLion4(){
@@ -56,7 +56,7 @@ public class LionCorrect : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		gs.updateLwy (3);
+		gs.updateLion4 ();
 	}
 
 	//test
@@ -70,7 +70,7 @@ public class LionCorrect : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		test.text = gs.intLions (0).ToString() + "\n" + gs.intLions (1).ToString() + "\n" + gs.intLions (2).ToString() + "\n" + gs.intLions (3).ToString() + "\n";
-
+		test.text = gs.returnLion1 ().ToString() + "\n" + gs.returnLion2 ().ToString() + "\n" + gs.returnLion3 ().ToString() + "\n" + gs.returnLion4 ().ToString() + "\n";
+		gs.updateLwy (1);
 	}
 }

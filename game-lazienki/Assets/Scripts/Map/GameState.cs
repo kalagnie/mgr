@@ -23,6 +23,8 @@ public class GameState : MonoBehaviour {
 	static public int visitedStanislaw;
 	static public int visitedLwy;
 
+	static public int[] checkedLions;
+
 	void Start(){
 		//Singleton
 		if (Instance != null) {
@@ -42,6 +44,8 @@ public class GameState : MonoBehaviour {
 		visitedSobieski = 0;
 		visitedStanislaw = 0;
 		visitedLwy = 0;
+
+		checkedLions = new int[]{0, 0, 0, 0};
 	}
 		
 	void OnDestroy(){
@@ -89,6 +93,10 @@ public class GameState : MonoBehaviour {
 	public void updateLwy(int n){
 		visitedLwy = n;
 	}
+
+	public void updateCheckedLions(int i){
+		checkedLions [i] = 1;
+	}
 		
 	//return character status
 	public int returnChopin(){
@@ -109,6 +117,14 @@ public class GameState : MonoBehaviour {
 
 	public int returnLwy(){
 		return visitedLwy;
+	}
+
+	public int[] returnCheckedLions(){
+		return checkedLions;
+	}
+
+	public int intLions(int i){
+		return checkedLions[i];
 	}
 
 	//test

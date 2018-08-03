@@ -8,9 +8,10 @@ public class GPS : MonoBehaviour {
 
 	public static GPS Instance { set; get; }
 
+	public bool isCloseEnough;
+
 	public double latitude;
 	public double longitude;
-	public bool isCloseEnough;
 
 	//przyciski
 	public Button Chopin;
@@ -34,6 +35,8 @@ public class GPS : MonoBehaviour {
 
 	public Button Music1;
 	public Button Music2;
+
+	public Button FinalPoint;
 
 	//wspolrzedne punktow
 
@@ -145,9 +148,6 @@ public class GPS : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		//test
-		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
-
 		characterActivation (Sobieski, fi2, lambda2, gs.returnSobieski ());
 		characterActivation (Chopin, ChopinF, ChopinL, gs.returnChopin());
 		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL, gs.returnSienkiewicz());
@@ -169,16 +169,16 @@ public class GPS : MonoBehaviour {
 
 		placeActivation (Music1, Music1F, Music1L);
 		placeActivation (Music2, Music2F, Music2L);
+
+		FinalPointActivation (FinalPoint, PalacNaWyspieF, PalacNaWyspieL, gs.returnLwy());
 	}
 
 	private void characterActivation(Button b, double f, double l, int visited){
 		if (CalculatingDistance (latitude, longitude, f, l) && (visited != 2))
 			b.interactable = true;
-		else if (CalculatingDistance (latitude, longitude, f, l))
+		else
 			b.interactable = true; //for testing
 			//b.interactable = false;
-		else
-			b.gameObject.SetActive(false); //znika z mapy
 	}
 
 	private void placeActivation(Button b, double f, double l){
@@ -187,6 +187,19 @@ public class GPS : MonoBehaviour {
 		else
 			b.interactable = true; //for testing
 			//b.interactable = false;
+	}
+
+	private void FinalPointActivation(Button b, double f, double l, int visited){
+		if (visited == 2){
+			b.gameObject.SetActive (true);
+			if (CalculatingDistance (latitude, longitude, f, l))
+				b.interactable = true;		
+			else
+				//b.interactable = false;
+				b.interactable = true; //for testing
+		}
+		else
+			b.gameObject.SetActive (false);
 	}
 
 	private double CosineLaw(double fi1, double lambda1, double fi2, double lambda2, double R){
@@ -241,7 +254,6 @@ public class GPS : MonoBehaviour {
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 
-		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
 		checkObjects();
 	}
 }

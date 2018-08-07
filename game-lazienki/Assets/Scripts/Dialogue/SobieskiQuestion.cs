@@ -42,6 +42,8 @@ public class SobieskiQuestion : MonoBehaviour {
 			currentText = 6;
 			if (gs.checkForItem("Listy"))
 				answer2Button.gameObject.SetActive (false);
+			else
+				answer2Button.gameObject.SetActive (true);
 		}
 			
 		updateText ();

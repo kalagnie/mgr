@@ -16,6 +16,8 @@ public class StanislawQuestion : MonoBehaviour {
 	public Button answer1Button;
 	public Button answer2Button;
 
+	public GameObject takePanel;
+	public GameObject givePanel;
 
 	private int currentText = 0;
 
@@ -32,7 +34,10 @@ public class StanislawQuestion : MonoBehaviour {
 		GameState gs = go.GetComponent<GameState>();
 
 		if (gs.returnSobieski() == 1) {
-			answer2Button.gameObject.SetActive (true);
+			if (gs.checkForItem("Rembrandt"))
+				answer2Button.gameObject.SetActive (true);
+			else
+				answer2Button.gameObject.SetActive (false);
 			currentText = 5;
 		}
 
@@ -47,11 +52,8 @@ public class StanislawQuestion : MonoBehaviour {
 	void updateText(){
 		questionText.text = questions [currentText];
 		answer1Button.GetComponentInChildren<Text>().text= answers1 [currentText];
-		answer2Button.GetComponentInChildren<Text>().text = answers2 [currentText];
-
-		//test
-		if(currentText == 5)
-			answer2Button.gameObject.SetActive (true);
+		if (currentText >= 4)
+			answer2Button.GetComponentInChildren<Text>().text = answers2 [currentText];
 	}
 
 	public void answer1Selected(){
@@ -62,26 +64,39 @@ public class StanislawQuestion : MonoBehaviour {
 		else if (currentText == 2) {
 			answer2Button.gameObject.SetActive (false);
 			currentText = currentText + 2;
-		} 
-		else if (currentText == 3) {
+		} else if (currentText == 3) {
 			answer2Button.gameObject.SetActive (false);
 			currentText = currentText + 1;
-		} 
-		else if (currentText == 4) {
+		} else if (currentText == 4) {
 			currentText = currentText + 1;
 
-			GameObject go = GameObject.Find("GameState");
-			if(go == null){
-				Debug.LogError("Failed to find 'GameState' object");
+			GameObject go = GameObject.Find ("GameState");
+			if (go == null) {
+				Debug.LogError ("Failed to find 'GameState' object");
 				this.enabled = false;
 				return;
 			}
 
-			GameState gs = go.GetComponent<GameState>();
+			GameState gs = go.GetComponent<GameState> ();
 			gs.updateSobieski (1);
 
 			SceneManager.LoadScene (1);
 			//Debug.Log ("EXIT");
+		} else if (currentText == 5) {
+			currentText = currentText + 1;
+			givePanel.gameObject.SetActive (true);
+		} else if (currentText == 6) {
+			GameObject go = GameObject.Find ("GameState");
+			if (go == null) {
+				Debug.LogError ("Failed to find 'GameState' object");
+				this.enabled = false;
+				return;
+			}
+
+			GameState gs = go.GetComponent<GameState> ();
+			gs.updateSobieski (2);
+
+			takePanel.gameObject.SetActive (true);
 		}
 	}
 
@@ -91,6 +106,9 @@ public class StanislawQuestion : MonoBehaviour {
 		else if (currentText == 3) {
 			currentText = currentText + 1;
 			answer2Button.gameObject.SetActive (false);
-		}		
+		}	
+		else if (currentText == 5){
+			SceneManager.LoadScene (1);
+		}
 	}
 }

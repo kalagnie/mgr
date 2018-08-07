@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GPS : MonoBehaviour {
 
+	public Text testing;
+
+
 	public static GPS Instance { set; get; }
 
 	public bool isCloseEnough;
@@ -37,6 +40,9 @@ public class GPS : MonoBehaviour {
 	public Button Music2;
 
 	public Button FinalPoint;
+	public Text WinText;
+	public Button BackWinPanel;
+	public Button QuitWinPanel;
 
 	//wspolrzedne punktow
 
@@ -148,7 +154,7 @@ public class GPS : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		characterActivation (Sobieski, fi2, lambda2, gs.returnSobieski ());
+		characterActivation (Sobieski, SobieskiF, SobieskiL, gs.returnSobieski ());
 		characterActivation (Chopin, ChopinF, ChopinL, gs.returnChopin());
 		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL, gs.returnSienkiewicz());
 		characterActivation (Sobieski, SobieskiF, SobieskiL, gs.returnSobieski());
@@ -170,7 +176,8 @@ public class GPS : MonoBehaviour {
 		placeActivation (Music1, Music1F, Music1L);
 		placeActivation (Music2, Music2F, Music2L);
 
-		FinalPointActivation (FinalPoint, PalacNaWyspieF, PalacNaWyspieL, gs.returnLwy());
+		//FinalPointActivation (FinalPoint, PalacNaWyspieF, PalacNaWyspieL, gs.returnLwy());
+		FinalPointActivation (FinalPoint, fi2, lambda2, gs.returnLwy());
 	}
 
 	private void characterActivation(Button b, double f, double l, int visited){
@@ -190,10 +197,22 @@ public class GPS : MonoBehaviour {
 	}
 
 	private void FinalPointActivation(Button b, double f, double l, int visited){
+		testing.text = visited.ToString ();
 		if (visited == 2){
+			
 			b.gameObject.SetActive (true);
-			if (CalculatingDistance (latitude, longitude, f, l))
-				b.interactable = true;		
+
+			if (CalculatingDistance (latitude, longitude, f, l)) {
+				b.interactable = true;
+				//if ma przedmioty{
+				//WinText = "Trafiłeś w tunel czasoprzestrzenny i... wróciłeś do swoich czasów! Gratulacje!";
+				//BackWinPanel.gameObject.SetActive (false);
+				//QuitWinPanel.gameObject.SetActive (true);
+				//}
+				//else{
+				WinText.text = "Znajdż insygnia władzy królewskiej, by wygrać grę.";
+				//}
+			}
 			else
 				//b.interactable = false;
 				b.interactable = true; //for testing

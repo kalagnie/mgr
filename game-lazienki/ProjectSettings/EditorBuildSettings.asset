@@ -23,51 +23,51 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Characters/Sobieski.unity
     guid: 1383619d71fcfa746810bcbe2e6ee96a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Places/SwiatyniaSybilli.unity
     guid: ecad1dede3b1cbe409769b4ff13e313b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Objects/Coins.unity
     guid: 392413b0312ccfa479201cb822b4953a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Architecture.unity
     guid: 4aaabeee3ffa1d547acca4ff4cda6514
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Places/StaraKordegarda.unity
     guid: e4f282a15a5727744912122a7d644cef
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Places/PalacNaWyspie.unity
     guid: 1ed7f1e7f32fb284fad790561942763e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Places/PalacMyslewicki.unity
     guid: 74988a0b3436b324d86174d45311b0b7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Places/Kartusz.unity
     guid: 25e861ef9e1c15d44b416089cb08ac34
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Places/BialyDomek.unity
     guid: 3e9af645fcadfea4baa387873bbf14e6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Characters/Stanislaw.unity
     guid: 1680d3551be2d4a4da290f6c562a7f9e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Places/SwiatyniaEgipska.unity
     guid: 081be848d1701c9488113f95a04b8014
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Characters/Lwy.unity
     guid: fbb13622696e4da468b0e3cc387374ec
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Characters/Puzzle.unity
     guid: 946720953e463864496fbfcc44c74005
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Characters/Lew1.unity
     guid: 30f60185a64846742870a74df8e2e987
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Characters/Lew2.unity
     guid: 28493045b7c2c5c42b022fabbbbb9713
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Characters/Lew3.unity
     guid: 3f7b129d3e4c78f45824aca92bc54aa6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Characters/Lew4.unity
     guid: c8d06bb5ed0535740a4e714eb8893c65

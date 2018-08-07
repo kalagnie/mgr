@@ -17,10 +17,9 @@ public class LionsQuestion : MonoBehaviour {
 	public Button answer1Button;
 	public Button answer2Button;
 
-	//test
-	public Text test;
-
 	private int currentText = 0;
+
+	public Text test;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +36,6 @@ public class LionsQuestion : MonoBehaviour {
 		if (gs.returnLwy() == 1) {
 			currentText = 3;
 			answer2Button.gameObject.SetActive (false);
-			test.text = gs.returnLwy ().ToString();
 		}
 
 		updateText ();
@@ -65,9 +63,8 @@ public class LionsQuestion : MonoBehaviour {
 		} else if (currentText == 2) {
 			SceneManager.LoadScene (17);
 
-		} else if ((currentText == 3) || (currentText == 4)) {
+		} else if ((currentText == 3) || (currentText == 4)) 
 			currentText = currentText + 1;	
-		}
 		else if (currentText == 5) {
 			
 			GameObject go = GameObject.Find("GameState");
@@ -78,7 +75,6 @@ public class LionsQuestion : MonoBehaviour {
 			}
 
 			GameState gs = go.GetComponent<GameState>();
-			test.text = gs.returnLwy ().ToString();
 			gs.updateLwy(2);
 			SceneManager.LoadScene (1);
 		}

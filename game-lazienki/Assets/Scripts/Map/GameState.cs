@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//test
-//using UnityEngine.UI;
-
 public class GameState : MonoBehaviour {
-
-	//public Text test;
 
 	static public GameState Instance; //The right GameStatus { set; get; }
 
@@ -33,7 +28,6 @@ public class GameState : MonoBehaviour {
 		if (Instance != null) {
 			//someone else is a singleton already => destroy ourselves
 			Destroy(this.gameObject);
-			//test.text = "destroyed";
 			return;
 		}
 		//we are the one

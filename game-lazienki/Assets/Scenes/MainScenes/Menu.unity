@@ -389,7 +389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 274.1847}
+  m_AnchoredPosition: {x: 0, y: 270}
   m_SizeDelta: {x: 550, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &248762019
@@ -793,7 +793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Are you sure?
+  m_Text: "Czy jeste\u015B pewien?"
 --- !u!222 &355914030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NO
+  m_Text: Nie
 --- !u!222 &756622699
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1085,7 +1085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 274.1847}
+  m_AnchoredPosition: {x: 0, y: 270}
   m_SizeDelta: {x: 500, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951429298
@@ -1324,7 +1324,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME
+  m_Text: Gra
 --- !u!222 &1454553480
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1398,7 +1398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ABOUT
+  m_Text: Informacje
 --- !u!222 &1614339285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1472,7 +1472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: QUIT
+  m_Text: "Zako\u0144cz"
 --- !u!222 &1759982026
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1546,7 +1546,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yes
+  m_Text: Tak
 --- !u!222 &1849094739
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1698,17 +1698,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2035573662}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 633328346}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 5184, y: 3456}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035573664
 MonoBehaviour:
@@ -1722,14 +1722,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7205882, g: 0.54137933, b: 1, a: 1}
+  m_Color: {r: 0.375, g: 0.375, b: 0.375, a: 0.609}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e484d39970b346d44a4dba61edf09cb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c41f45c4719c7546b068ed6d4c38992, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

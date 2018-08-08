@@ -1,0 +1,14 @@
+newmtl Wrenlyprincecrown1Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Wrenlyprincecrown1Tex.png
+map_Kd Wrenlyprincecrown1Tex.png
+map_d Wrenlyprincecrown1Tex.png
+

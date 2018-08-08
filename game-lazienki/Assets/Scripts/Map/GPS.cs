@@ -171,7 +171,7 @@ public class GPS : MonoBehaviour {
 
 		placeActivation (Gallery, GalleryF, GalleryL);
 		placeActivation (Coins, CoinsF, CoinsL);
-		placeActivation (Crown, CrownF, CrownL);
+		crownActivation (Crown, CrownF, CrownL, gs.returnCrown());
 
 		placeActivation (Music1, Music1F, Music1L);
 		placeActivation (Music2, Music2F, Music2L);
@@ -194,6 +194,17 @@ public class GPS : MonoBehaviour {
 		else
 			b.interactable = true; //for testing
 			//b.interactable = false;
+	}
+
+	private void crownActivation(Button b, double f, double l, bool taken){
+		if (!taken) {
+			if (CalculatingDistance (latitude, longitude, f, l))
+				b.interactable = true;
+			else
+				b.interactable = true; //for testing
+			//b.interactable = false;
+		} else
+			b.gameObject.SetActive (false);
 	}
 
 	private void FinalPointActivation(Button b, double f, double l, int visited){

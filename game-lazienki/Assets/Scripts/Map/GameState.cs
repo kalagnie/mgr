@@ -18,6 +18,8 @@ public class GameState : MonoBehaviour {
 	static public int visitedStanislaw;
 	static public int visitedLwy;
 
+	static public bool takenCrown;
+
 	static public bool Lion1;
 	static public bool Lion2;
 	static public bool Lion3;
@@ -116,6 +118,10 @@ public class GameState : MonoBehaviour {
 	public void updateLion4(){
 		Lion4 = true;
 	}
+
+	public void updateCrown(){
+		takenCrown = true;
+	}
 		
 	//return character status
 	public int returnChopin(){
@@ -149,6 +155,10 @@ public class GameState : MonoBehaviour {
 	}
 	public bool returnLion4(){
 		return Lion4;
+	}
+
+	public bool returnCrown(){
+		return takenCrown;
 	}
 
 	//test

@@ -23,7 +23,8 @@ public class StanislawQuestion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+
 		GameObject go = GameObject.Find("GameState");
 		if(go == null){
 			Debug.LogError("Failed to find 'GameState' object");
@@ -33,7 +34,7 @@ public class StanislawQuestion : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		if (gs.returnSobieski() == 1) {
+		if (gs.returnStanislaw() == 1) {
 			if (gs.checkForItem("Rembrandt"))
 				answer2Button.gameObject.SetActive (true);
 			else
@@ -52,8 +53,10 @@ public class StanislawQuestion : MonoBehaviour {
 	void updateText(){
 		questionText.text = questions [currentText];
 		answer1Button.GetComponentInChildren<Text>().text= answers1 [currentText];
-		if (currentText >= 4)
+		if (currentText <= 4)
 			answer2Button.GetComponentInChildren<Text>().text = answers2 [currentText];
+		else if (currentText == 5)
+			answer2Button.GetComponentInChildren<Text>().text = answers2 [4];
 	}
 
 	public void answer1Selected(){
@@ -68,8 +71,7 @@ public class StanislawQuestion : MonoBehaviour {
 			answer2Button.gameObject.SetActive (false);
 			currentText = currentText + 1;
 		} else if (currentText == 4) {
-			currentText = currentText + 1;
-
+			
 			GameObject go = GameObject.Find ("GameState");
 			if (go == null) {
 				Debug.LogError ("Failed to find 'GameState' object");
@@ -78,13 +80,15 @@ public class StanislawQuestion : MonoBehaviour {
 			}
 
 			GameState gs = go.GetComponent<GameState> ();
-			gs.updateSobieski (1);
+			gs.updateStanislaw (1);
+			//currentText = currentText + 1;
 
 			SceneManager.LoadScene (1);
-			//Debug.Log ("EXIT");
+
+			Debug.Log ("EXIT");
 		} else if (currentText == 5) {
-			currentText = currentText + 1;
-			givePanel.gameObject.SetActive (true);
+			//Debug.Log ("EXIT");
+			SceneManager.LoadScene (1);
 		} else if (currentText == 6) {
 			GameObject go = GameObject.Find ("GameState");
 			if (go == null) {
@@ -94,7 +98,7 @@ public class StanislawQuestion : MonoBehaviour {
 			}
 
 			GameState gs = go.GetComponent<GameState> ();
-			gs.updateSobieski (2);
+			gs.updateStanislaw (2);
 
 			takePanel.gameObject.SetActive (true);
 		}
@@ -108,7 +112,9 @@ public class StanislawQuestion : MonoBehaviour {
 			answer2Button.gameObject.SetActive (false);
 		}	
 		else if (currentText == 5){
-			SceneManager.LoadScene (1);
+			currentText = currentText + 1;
+			givePanel.gameObject.SetActive (true);
+			answer2Button.gameObject.SetActive (false);
 		}
 	}
 }

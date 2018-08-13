@@ -19,6 +19,7 @@ public class GameState : MonoBehaviour {
 	static public int visitedLwy;
 
 	static public bool takenCrown;
+	static public bool takenRembrandt;
 
 	static public bool Lion1;
 	static public bool Lion2;
@@ -122,6 +123,10 @@ public class GameState : MonoBehaviour {
 	public void updateCrown(){
 		takenCrown = true;
 	}
+
+	public void updateRembrandt(){
+		takenRembrandt = true;
+	}
 		
 	//return character status
 	public int returnChopin(){
@@ -137,7 +142,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	public int returnStanislaw(){
-		return visitedSobieski;
+		return visitedStanislaw;
 	}
 
 	public int returnLwy(){
@@ -159,6 +164,10 @@ public class GameState : MonoBehaviour {
 
 	public bool returnCrown(){
 		return takenCrown;
+	}
+
+	public bool returnRembrandt(){
+		return takenRembrandt;
 	}
 
 	//test

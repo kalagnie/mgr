@@ -3148,7 +3148,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3902,7 +3902,7 @@ MonoBehaviour:
   SwiatyniaSybilli: {fileID: 1276925295}
   SwiatyniaEgipska: {fileID: 1882015990}
   Lwy: {fileID: 2015278057}
-  Gallery: {fileID: 586116625}
+  Rembrandt: {fileID: 586116625}
   Coins: {fileID: 1681313640}
   Crown: {fileID: 1165927640}
   Music1: {fileID: 720165189}

@@ -74,3 +74,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Objects/Crown.unity
     guid: 7293b6df83040314393b9a4f7f90e833
+  - enabled: 1
+    path: Assets/Scenes/Objects/Painting.unity
+    guid: 4ccc81fdb80bee04eb18623f2803dc9f

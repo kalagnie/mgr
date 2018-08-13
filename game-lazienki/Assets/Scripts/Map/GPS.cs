@@ -31,7 +31,7 @@ public class GPS : MonoBehaviour {
 	public Button SwiatyniaEgipska;
 	public Button Lwy;
 
-	public Button Gallery;
+	public Button Rembrandt;
 
 	public Button Coins;
 	public Button Crown;
@@ -86,8 +86,8 @@ public class GPS : MonoBehaviour {
 	double SwiatyniaEgipskaL = 21.028991;
 
 	//items
-	double GalleryF = 52.214577;
-	double GalleryL = 21.026379;
+	double RembrandtF = 52.214577;
+	double RembrandtL = 21.026379;
 
 	//ogarnac
 	double CoinsF = 52.214577;
@@ -169,9 +169,9 @@ public class GPS : MonoBehaviour {
 		placeActivation (SwiatyniaSybilli, SwiatyniaSybilliF, SwiatyniaSybilliL);
 		placeActivation (SwiatyniaEgipska, SwiatyniaEgipskaF, SwiatyniaEgipskaL);
 
-		placeActivation (Gallery, GalleryF, GalleryL);
 		placeActivation (Coins, CoinsF, CoinsL);
-		crownActivation (Crown, CrownF, CrownL, gs.returnCrown());
+		objectActivation (Crown, CrownF, CrownL, gs.returnCrown());
+		objectActivation (Rembrandt, RembrandtF, RembrandtL, gs.returnRembrandt());
 
 		placeActivation (Music1, Music1F, Music1L);
 		placeActivation (Music2, Music2F, Music2L);
@@ -196,7 +196,7 @@ public class GPS : MonoBehaviour {
 			//b.interactable = false;
 	}
 
-	private void crownActivation(Button b, double f, double l, bool taken){
+	private void objectActivation(Button b, double f, double l, bool taken){
 		if (!taken) {
 			if (CalculatingDistance (latitude, longitude, f, l))
 				b.interactable = true;

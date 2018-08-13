@@ -352,14 +352,14 @@ MonoBehaviour:
   - "Dzie\u0142o mog\u0142o zosta\u0107 chwilowo przeniesione do galerii. Tam sprawd\u017A
     najpierw."
   - "A wi\u0119c uda\u0142o Ci si\u0119 odnale\u017A\u0107 obraz?"
-  - "Rzeczywi\u015Bcie okaza\u0142e\u015B si\u0119pomocny. Zatem powierz\u0119 Ci
+  - "Rzeczywi\u015Bcie okaza\u0142e\u015B si\u0119 pomocny. Zatem powierz\u0119 Ci
     jeszcze jedno zadanie. Oto ber\u0142o kr\xF3lewskie, znajd\u017A bezpieczne miejsce,
     by je przechowa\u0107. Ostatnio du\u017Co znacz\u0105cych rzeczy ginie..."
   answers1:
   - Jakiego portretu szukasz?
   - "W\u0119drowcem, ch\u0119tnym do pomocy."
   - Pewnie mowa o Rembrancie. Gdzie ostatnio widziano obraz?
-  - "Co\u015B mi si\u0119obi\u0142o o uszy."
+  - "Co\u015B mi si\u0119 obi\u0142o o uszy."
   - Ok.
   - Nie.
   - "Oczywi\u015Bcie, tak zrobi\u0119."
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconSprites:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 8a68547ad9e95dd40ba31fa215776f24, type: 3}
   itemText:
   - "Ber\u0142o"
 --- !u!1 &450609257
@@ -1890,7 +1890,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8a68547ad9e95dd40ba31fa215776f24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 458b480001586d646985c53a68dd1b6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

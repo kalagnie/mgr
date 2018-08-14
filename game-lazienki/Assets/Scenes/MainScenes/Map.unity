@@ -1286,6 +1286,7 @@ GameObject:
   - component: {fileID: 310218072}
   - component: {fileID: 310218073}
   - component: {fileID: 310218074}
+  - component: {fileID: 310218075}
   m_Layer: 5
   m_Name: SceneController
   m_TagString: Untagged
@@ -1394,10 +1395,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconSprites:
   - {fileID: 21300000, guid: 4f4c197bd26f6d8438b10ac9e6cd46e8, type: 3}
-  - {fileID: 21300000, guid: 23f2a8b29d55aba4f80eda5fb578970f, type: 3}
+  - {fileID: 21300000, guid: 4f4c197bd26f6d8438b10ac9e6cd46e8, type: 3}
   itemText:
   - Notturno 1
   - Notturno 2
+--- !u!114 &310218075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310218068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a25b97fe8ca5747acc5fe0f82617b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &310518431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,7 +1421,6 @@ GameObject:
   - component: {fileID: 310518432}
   - component: {fileID: 310518433}
   - component: {fileID: 310518435}
-  - component: {fileID: 310518436}
   m_Layer: 0
   m_Name: MusicController
   m_TagString: Untagged
@@ -1517,7 +1528,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f27811151ca7a484f98bd57c9d5a5e9a, type: 3}
   - {fileID: 21300000, guid: 65c95a1b4d4bc6946af5b521e2529fac, type: 3}
   musicIcon: {fileID: 21300000, guid: 4f4c197bd26f6d8438b10ac9e6cd46e8, type: 3}
-  musicName: NOTTURNO 1
+  musicName: Notturno 1
 --- !u!4 &310518434
 Transform:
   m_ObjectHideFlags: 0
@@ -1551,20 +1562,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f27811151ca7a484f98bd57c9d5a5e9a, type: 3}
   - {fileID: 21300000, guid: 65c95a1b4d4bc6946af5b521e2529fac, type: 3}
   musicIcon: {fileID: 21300000, guid: 4f4c197bd26f6d8438b10ac9e6cd46e8, type: 3}
-  musicName: NOTTURNO 2
---- !u!114 &310518436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 310518431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03e2b6fa9410a4d419085a016a758b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 1448918803}
-  test: {fileID: 1373766752}
+  musicName: Notturno 2
 --- !u!1 &331724679
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,7 +3400,6 @@ RectTransform:
   - {fileID: 141609140}
   - {fileID: 946084030}
   - {fileID: 1536410895}
-  - {fileID: 1373766751}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3886,7 +3883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2151772608b87994ea269d5be015c98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testing: {fileID: 1373766752}
   isCloseEnough: 0
   latitude: 0
   longitude: 0
@@ -6172,80 +6168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 0
---- !u!1 &1373766750
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1373766751}
-  - component: {fileID: 1373766753}
-  - component: {fileID: 1373766752}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1373766751
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1373766750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 633328346}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.2621765, y: -418}
-  m_SizeDelta: {x: 300, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1373766752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1373766750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 34
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: New Text
---- !u!222 &1373766753
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1373766750}
 --- !u!1 &1374873105
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,9 +6473,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 310218075}
+        m_MethodName: music1Taken
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7465,7 +7387,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 24
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7872,9 +7794,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 310218075}
+        m_MethodName: music2Taken
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

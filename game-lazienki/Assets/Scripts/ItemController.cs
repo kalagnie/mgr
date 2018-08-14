@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ItemController : MonoBehaviour {
 
 	public GameObject go;
-	public Text test;
 
 	private bool ItemTaken(string name){
 		GameObject go = GameObject.Find("GameState");
@@ -24,10 +23,5 @@ public class ItemController : MonoBehaviour {
 		if (ItemTaken (name))
 			go.gameObject.SetActive (false);
 	}
-
-
-	//test
-	public void print(){
-		test.text = ItemTaken ("Notturno 1").ToString();
-	}
+		
 }

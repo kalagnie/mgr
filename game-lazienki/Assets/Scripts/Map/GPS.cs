@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class GPS : MonoBehaviour {
 
-	public Text testing;
-
-
 	public static GPS Instance { set; get; }
 
 	public bool isCloseEnough;
@@ -208,7 +205,6 @@ public class GPS : MonoBehaviour {
 	}
 
 	private void FinalPointActivation(Button b, double f, double l, int visited){
-		testing.text = visited.ToString ();
 		if (visited == 2){
 			
 			b.gameObject.SetActive (true);

@@ -26,6 +26,9 @@ public class GameState : MonoBehaviour {
 	static public bool Lion3;
 	static public bool Lion4;
 
+	static public bool Music1;
+	static public bool Music2;
+
 	void Start(){
 		//Singleton
 		if (Instance != null) {
@@ -120,6 +123,14 @@ public class GameState : MonoBehaviour {
 		Lion4 = true;
 	}
 
+	public void updateMusic1(){
+		Music1 = true;
+	}
+
+	public void updateMusic2(){
+		Music2 = true;
+	}
+
 	public void updateCrown(){
 		takenCrown = true;
 	}
@@ -130,11 +141,11 @@ public class GameState : MonoBehaviour {
 		
 	//return character status
 	public int returnChopin(){
-		return visitedSobieski;
+		return visitedChopin;
 	}
 
 	public int returnSienkiewicz(){
-		return visitedSobieski;
+		return visitedSienkiewicz;
 	}
 
 	public int returnSobieski(){
@@ -160,6 +171,11 @@ public class GameState : MonoBehaviour {
 	}
 	public bool returnLion4(){
 		return Lion4;
+	}
+	public bool returnMusic(){
+		if (Music1 && Music2)
+			return true;
+		return false;
 	}
 
 	public bool returnCrown(){

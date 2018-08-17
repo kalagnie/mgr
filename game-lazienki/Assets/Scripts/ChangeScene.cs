@@ -8,4 +8,8 @@ public class ChangeScene : MonoBehaviour {
 	public void ChangeToScene (int newScene){
 		SceneManager.LoadScene (newScene);
 	}
+
+	public void EndGame (){
+		Application.Quit ();
+	}
 }

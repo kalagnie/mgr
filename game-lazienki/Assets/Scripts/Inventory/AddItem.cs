@@ -20,4 +20,16 @@ public class AddItem : MonoBehaviour {
 		GameState gs = go.GetComponent<GameState>();
 		gs.addItem (iconSprites [nr], itemText[nr]);
 	}
+
+	public void RemoveItemFromInventory(string name){
+		GameObject go = GameObject.Find("GameState");
+		if(go == null){
+			Debug.LogError("Failed to find 'GameState' object");
+			this.enabled = false;
+			return;
+		}
+
+		GameState gs = go.GetComponent<GameState>();
+		gs.removeItem (name);
+	}
 }

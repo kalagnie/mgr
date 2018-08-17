@@ -8,18 +8,38 @@ public class GPS : MonoBehaviour {
 
 	public static GPS Instance { set; get; }
 
+	public bool isCloseEnough;
+
 	public double latitude;
 	public double longitude;
-	public bool isCloseEnough;
 
 	//przyciski
 	public Button Chopin;
-	public Button Sienkiewicz;
 	public Button Sobieski;
 	public Button Stanislaw;
 
-	public Button PalacNaWodzie;
+	public Button PalacNaWyspie;
 	public Button BialyDomek;
+	public Button Kartusz;
+	public Button StaraKordegarda;
+	public Button PalacMyslewicki;
+	public Button SwiatyniaSybilli;
+	public Button SwiatyniaEgipska;
+	public Button Lwy;
+
+	public Button Rembrandt;
+
+	public Button Coins;
+	public Button Coins2;
+	public Button Crown;
+
+	public Button Music1;
+	public Button Music2;
+
+	public Button FinalPoint;
+	public Text WinText;
+	public Button BackWinPanel;
+	public Button QuitWinPanel;
 
 	//wspolrzedne punktow
 
@@ -27,25 +47,56 @@ public class GPS : MonoBehaviour {
 	double fi2 = 52.17731867467772;
 	double lambda2 = 21.05153060884163;
 
-	/*
+	//character's coordinations
 	double ChopinF = 52.214703;
 	double ChopinL = 21.028105;
-
-	double SienkiewiczF = 52.215659;
-	double SienkiewiczL = 21.027031;
 
 	double SobieskiF = 52.217499;
 	double SobieskiL = 21.035456;
 
 	double StanislawF = 52.215630;
 	double StanislawL = 21.031462;
-	*/
 
-	double PalacNaWodzieF = 52.215069;
-	double PalacNaWodzieL = 21.035814;
+	//place's coordinations
+	double PalacNaWyspieF = 52.215063;
+	double PalacNaWyspieL = 21.035809;
 
-	double BialyDomekF = 52.215314;
-	double BialyDomekL = 21.031519;
+	double BialyDomekF = 52.215320;
+	double BialyDomekL = 21.031528;
+
+	double KartuszF = 52.217065;
+	double KartuszL = 21.036387;
+
+	double StaraKordegardaF = 52.216238;
+	double StaraKordegardaL = 21.036647;
+
+	double PalacMyslewickiF = 52.215498;
+	double PalacMyslewickiL = 21.038291;
+
+	double SwiatyniaSybilliF = 52.213726;
+	double SwiatyniaSybilliL = 21.029000;
+
+	double SwiatyniaEgipskaF = 52.211166;
+	double SwiatyniaEgipskaL = 21.028991;
+
+	//items
+	double RembrandtF = 52.214577;
+	double RembrandtL = 21.026379;
+
+	double CoinsF = 52.212193;
+	double CoinsL = 21.037555;
+
+	double Coins2F = 52.211341;
+	double Coins2L = 21.033561;
+
+	double CrownF = 52.209586;
+	double CrownL = 21.033650;
+
+	double Music1F = 52.213809;
+	double Music1L = 21.033776;
+
+	double Music2F = 52.213276;
+	double Music2L = 21.028133;
 
 	//test
 	public Text test;
@@ -99,18 +150,30 @@ public class GPS : MonoBehaviour {
 
 		GameState gs = go.GetComponent<GameState>();
 
-		//test
-		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
-		characterActivation (Sobieski, fi2, lambda2, gs.returnSobieski ());
+		characterActivation (Sobieski, SobieskiF, SobieskiL, gs.returnSobieski ());
+		characterActivation (Chopin, ChopinF, ChopinL, gs.returnChopin());
+		characterActivation (Sobieski, SobieskiF, SobieskiL, gs.returnSobieski());
+		characterActivation (Stanislaw, StanislawF, StanislawL, gs.returnStanislaw());
+		characterActivation (Lwy, SwiatyniaEgipskaF, SwiatyniaEgipskaL, gs.returnLwy());
 
-		/*
-		characterActivation (Chopin, ChopinF, ChopinL);
-		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL);
-		characterActivation (Sobieski, SobieskiF, SobieskiL);
-		characterActivation (Stanislaw, StanislawF, StanislawL);
-		*/
-		placeActivation (PalacNaWodzie, PalacNaWodzieF, PalacNaWodzieL);
+		placeActivation (PalacNaWyspie, PalacNaWyspieF, PalacNaWyspieL);
 		placeActivation (BialyDomek, BialyDomekF, BialyDomekL);
+		placeActivation (Kartusz, KartuszF, KartuszL);
+		placeActivation (StaraKordegarda, StaraKordegardaF, StaraKordegardaL);
+		placeActivation (PalacMyslewicki, PalacMyslewickiF, PalacMyslewickiL);
+		placeActivation (SwiatyniaSybilli, SwiatyniaSybilliF, SwiatyniaSybilliL);
+		placeActivation (SwiatyniaEgipska, SwiatyniaEgipskaF, SwiatyniaEgipskaL);
+
+		placeActivation (Coins, CoinsF, CoinsL);
+		placeActivation (Coins2, Coins2F, Coins2L);
+		objectActivation (Crown, CrownF, CrownL, gs.returnCrown());
+		objectActivation (Rembrandt, RembrandtF, RembrandtL, gs.returnRembrandt());
+
+		placeActivation (Music1, Music1F, Music1L);
+		placeActivation (Music2, Music2F, Music2L);
+
+		FinalPointActivation (FinalPoint, PalacNaWyspieF, PalacNaWyspieL, gs.returnLwy());
+		//FinalPointActivation (FinalPoint, fi2, lambda2, gs.returnLwy());
 	}
 
 	private void characterActivation(Button b, double f, double l, int visited){
@@ -125,7 +188,52 @@ public class GPS : MonoBehaviour {
 		if (CalculatingDistance (latitude, longitude, f, l))
 			b.interactable = true;
 		else
-			b.interactable = false;
+			b.interactable = true; //for testing
+			//b.interactable = false;
+	}
+
+	private void objectActivation(Button b, double f, double l, bool taken){
+		if (!taken) {
+			if (CalculatingDistance (latitude, longitude, f, l))
+				b.interactable = true;
+			else
+				b.interactable = true; //for testing
+			//b.interactable = false;
+		} else
+			b.gameObject.SetActive (false);
+	}
+
+	private void FinalPointActivation(Button b, double f, double l, int visited){
+		if (visited == 2){
+			
+			b.gameObject.SetActive (true);
+
+			//if (CalculatingDistance (latitude, longitude, f, l)) {
+				b.interactable = true;
+				GameObject go = GameObject.Find ("GameState");
+				if (go == null) {
+					Debug.LogError ("Failed to find 'GameState' object");
+					this.enabled = false;
+					return;
+				}
+
+				GameState gs = go.GetComponent<GameState> ();
+
+
+				if (gs.returnCrown () && gs.returnApple () && gs.returnSceptre ()) {
+					
+					WinText.text = "Trafiłeś w tunel czasoprzestrzenny i... wróciłeś do swoich czasów! Gratulacje!";
+					BackWinPanel.gameObject.SetActive (false);
+					QuitWinPanel.gameObject.SetActive (true);
+				}
+				else
+					WinText.text = "Znajdż insygnia władzy królewskiej, by wygrać grę.";
+			//}
+			//else
+				//b.interactable = false;
+		}
+		else
+			b.gameObject.SetActive (false);
 	}
 
 	private double CosineLaw(double fi1, double lambda1, double fi2, double lambda2, double R){
@@ -180,7 +288,6 @@ public class GPS : MonoBehaviour {
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 
-		//isCloseEnough = CalculatingDistance (latitude, longitude, fi2, lambda2);
 		checkObjects();
 	}
 }

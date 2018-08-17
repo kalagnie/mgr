@@ -417,7 +417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c50b5fc7c81f47ad40aa748b52c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 0}
 --- !u!4 &443438198
 Transform:
   m_ObjectHideFlags: 0
@@ -1378,7 +1377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Przeby\u0142e\u015B kawa\u0142ek drogi,sspaceruj\u0105c po naszym parku.
+  m_Text: "Przeby\u0142e\u015B kawa\u0142ek drogi, spaceruj\u0105c po naszym parku.
     Czy wiesz jakiej jest on wielko\u015Bci?"
 --- !u!222 &1726043254
 CanvasRenderer:

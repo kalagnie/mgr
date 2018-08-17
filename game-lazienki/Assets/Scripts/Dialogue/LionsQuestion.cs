@@ -19,8 +19,6 @@ public class LionsQuestion : MonoBehaviour {
 
 	private int currentText = 0;
 
-	public Text test;
-
 	// Use this for initialization
 	void Start () {
 
@@ -55,14 +53,12 @@ public class LionsQuestion : MonoBehaviour {
 
 	public void answer1Selected(){
 		if (currentText == 0) {
-			//Debug.Log ("EXIT");
 			SceneManager.LoadScene (1);
 		} else if (currentText == 1) {
 			currentText = 3;
 			SceneManager.LoadScene (17);
 		} else if (currentText == 2) {
 			SceneManager.LoadScene (17);
-
 		} else if ((currentText == 3) || (currentText == 4)) 
 			currentText = currentText + 1;	
 		else if (currentText == 5) {

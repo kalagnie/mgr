@@ -332,7 +332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c50b5fc7c81f47ad40aa748b52c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 1030406371}
 --- !u!4 &443438198
 Transform:
   m_ObjectHideFlags: 0
@@ -1378,8 +1377,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Moje pytanie tak\u017Ce dotyczy \u0141azienek. Czy wiesz, w kt\xF3rym wieku
-    zosta\u0142y one za\u0142o\u017Cone?"
+  m_Text: "Czy wiesz, w kt\xF3rym wieku zosta\u0142 za\u0142o\u017Cony Park \u0141azienki
+    Kr\xF3lewskie?"
 --- !u!222 &1726043254
 CanvasRenderer:
   m_ObjectHideFlags: 0

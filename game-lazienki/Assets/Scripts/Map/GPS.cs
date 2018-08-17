@@ -15,7 +15,6 @@ public class GPS : MonoBehaviour {
 
 	//przyciski
 	public Button Chopin;
-	public Button Sienkiewicz;
 	public Button Sobieski;
 	public Button Stanislaw;
 
@@ -31,6 +30,7 @@ public class GPS : MonoBehaviour {
 	public Button Rembrandt;
 
 	public Button Coins;
+	public Button Coins2;
 	public Button Crown;
 
 	public Button Music1;
@@ -50,9 +50,6 @@ public class GPS : MonoBehaviour {
 	//character's coordinations
 	double ChopinF = 52.214703;
 	double ChopinL = 21.028105;
-
-	double SienkiewiczF = 52.215659;
-	double SienkiewiczL = 21.027031;
 
 	double SobieskiF = 52.217499;
 	double SobieskiL = 21.035456;
@@ -86,18 +83,20 @@ public class GPS : MonoBehaviour {
 	double RembrandtF = 52.214577;
 	double RembrandtL = 21.026379;
 
-	//ogarnac
-	double CoinsF = 52.214577;
-	double CoinsL = 21.026379;
-	//ogarnac
-	double CrownF = 52.214577;
-	double CrownL = 21.026379;
+	double CoinsF = 52.212193;
+	double CoinsL = 21.037555;
 
-	double Music1F = 52.212724;
-	double Music1L = 21.031083;
+	double Coins2F = 52.211341;
+	double Coins2L = 21.033561;
 
-	double Music2F = 52.213277;
-	double Music2L = 21.028189;
+	double CrownF = 52.209586;
+	double CrownL = 21.033650;
+
+	double Music1F = 52.213809;
+	double Music1L = 21.033776;
+
+	double Music2F = 52.213276;
+	double Music2L = 21.028133;
 
 	//test
 	public Text test;
@@ -153,7 +152,6 @@ public class GPS : MonoBehaviour {
 
 		characterActivation (Sobieski, SobieskiF, SobieskiL, gs.returnSobieski ());
 		characterActivation (Chopin, ChopinF, ChopinL, gs.returnChopin());
-		characterActivation (Sienkiewicz, SienkiewiczF, SienkiewiczL, gs.returnSienkiewicz());
 		characterActivation (Sobieski, SobieskiF, SobieskiL, gs.returnSobieski());
 		characterActivation (Stanislaw, StanislawF, StanislawL, gs.returnStanislaw());
 		characterActivation (Lwy, SwiatyniaEgipskaF, SwiatyniaEgipskaL, gs.returnLwy());
@@ -167,14 +165,15 @@ public class GPS : MonoBehaviour {
 		placeActivation (SwiatyniaEgipska, SwiatyniaEgipskaF, SwiatyniaEgipskaL);
 
 		placeActivation (Coins, CoinsF, CoinsL);
+		placeActivation (Coins2, Coins2F, Coins2L);
 		objectActivation (Crown, CrownF, CrownL, gs.returnCrown());
 		objectActivation (Rembrandt, RembrandtF, RembrandtL, gs.returnRembrandt());
 
 		placeActivation (Music1, Music1F, Music1L);
 		placeActivation (Music2, Music2F, Music2L);
 
-		//FinalPointActivation (FinalPoint, PalacNaWyspieF, PalacNaWyspieL, gs.returnLwy());
-		FinalPointActivation (FinalPoint, fi2, lambda2, gs.returnLwy());
+		FinalPointActivation (FinalPoint, PalacNaWyspieF, PalacNaWyspieL, gs.returnLwy());
+		//FinalPointActivation (FinalPoint, fi2, lambda2, gs.returnLwy());
 	}
 
 	private void characterActivation(Button b, double f, double l, int visited){
@@ -209,20 +208,29 @@ public class GPS : MonoBehaviour {
 			
 			b.gameObject.SetActive (true);
 
-			if (CalculatingDistance (latitude, longitude, f, l)) {
+			//if (CalculatingDistance (latitude, longitude, f, l)) {
 				b.interactable = true;
-				//if ma przedmioty{
-				//WinText = "Trafiłeś w tunel czasoprzestrzenny i... wróciłeś do swoich czasów! Gratulacje!";
-				//BackWinPanel.gameObject.SetActive (false);
-				//QuitWinPanel.gameObject.SetActive (true);
-				//}
-				//else{
-				WinText.text = "Znajdż insygnia władzy królewskiej, by wygrać grę.";
-				//}
-			}
-			else
+				GameObject go = GameObject.Find ("GameState");
+				if (go == null) {
+					Debug.LogError ("Failed to find 'GameState' object");
+					this.enabled = false;
+					return;
+				}
+
+				GameState gs = go.GetComponent<GameState> ();
+
+
+				if (gs.returnCrown () && gs.returnApple () && gs.returnSceptre ()) {
+					
+					WinText.text = "Trafiłeś w tunel czasoprzestrzenny i... wróciłeś do swoich czasów! Gratulacje!";
+					BackWinPanel.gameObject.SetActive (false);
+					QuitWinPanel.gameObject.SetActive (true);
+				}
+				else
+					WinText.text = "Znajdż insygnia władzy królewskiej, by wygrać grę.";
+			//}
+			//else
 				//b.interactable = false;
-				b.interactable = true; //for testing
 		}
 		else
 			b.gameObject.SetActive (false);

@@ -81,13 +81,11 @@ public class StanislawQuestion : MonoBehaviour {
 
 			GameState gs = go.GetComponent<GameState> ();
 			gs.updateStanislaw (1);
-			//currentText = currentText + 1;
 
 			SceneManager.LoadScene (1);
 
 			Debug.Log ("EXIT");
 		} else if (currentText == 5) {
-			//Debug.Log ("EXIT");
 			SceneManager.LoadScene (1);
 		} else if (currentText == 6) {
 			GameObject go = GameObject.Find ("GameState");
@@ -99,6 +97,7 @@ public class StanislawQuestion : MonoBehaviour {
 
 			GameState gs = go.GetComponent<GameState> ();
 			gs.updateStanislaw (2);
+			gs.updateSceptre ();
 
 			takePanel.gameObject.SetActive (true);
 		}

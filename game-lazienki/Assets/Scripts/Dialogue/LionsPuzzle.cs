@@ -16,8 +16,6 @@ public class LionsPuzzle : MonoBehaviour {
 	public Button Next;
 	public Button Resign;
 
-	public Text test;
-
 	// Use this for initialization
 	void Start () {
 		Lion1.image.sprite = checkedIcons [0];
@@ -61,7 +59,6 @@ public class LionsPuzzle : MonoBehaviour {
 
 		if (gs.returnLion1 () && gs.returnLion2 () && gs.returnLion2 () && gs.returnLion3 () && gs.returnLion4 ()) {
 			gs.updateLwy (1);
-			test.text = gs.returnLwy ().ToString ();
 			Next.gameObject.SetActive (true);
 			Resign.gameObject.SetActive (false);
 		}

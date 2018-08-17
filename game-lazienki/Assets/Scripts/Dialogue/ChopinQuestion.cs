@@ -42,8 +42,8 @@ public class ChopinQuestion : MonoBehaviour {
 		if (gs.returnMusic ()) {
 			currentText = 4;
 			currentAnswer2Text = 1;
-			//if posiada listy
-			answer2Button.gameObject.SetActive (true);
+			if(gs.returnLetter())
+				answer2Button.gameObject.SetActive (true);
 		}
 
 		updateText ();
@@ -95,7 +95,15 @@ public class ChopinQuestion : MonoBehaviour {
 		} else if (currentText == 6) {
 			currentText = currentText + 1;
 			currentAnswer2Text = 3;
-		} else if (currentText == 7) {
+		} else if (currentText == 7) {GameObject go = GameObject.Find ("GameState");
+			if (go == null) {
+				Debug.LogError ("Failed to find 'GameState' object");
+				this.enabled = false;
+				return;
+			}
+
+			GameState gs = go.GetComponent<GameState> ();
+			gs.updateChopin (2);
 			answer2Button.gameObject.SetActive (false);
 			givePanel.gameObject.SetActive (true);
 			currentText = currentText + 1;
@@ -118,6 +126,15 @@ public class ChopinQuestion : MonoBehaviour {
 		else if (currentText == 6){
 			currentText = 8;
 			givePanel.gameObject.SetActive (true);
+			GameObject go = GameObject.Find ("GameState");
+			if (go == null) {
+				Debug.LogError ("Failed to find 'GameState' object");
+				this.enabled = false;
+				return;
+			}
+
+			GameState gs = go.GetComponent<GameState> ();
+			gs.updateChopin (2);
 			answer2Button.gameObject.SetActive (false);
 		}
 		else if (currentText == 7){

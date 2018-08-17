@@ -406,7 +406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c50b5fc7c81f47ad40aa748b52c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 183910200}
 --- !u!4 &443438198
 Transform:
   m_ObjectHideFlags: 0
@@ -1379,7 +1378,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Ostatnie pytanie to - w kt\xF3rym roku koronowano Stanis\u0142awa Augusta
-    Poniatowskiego na kr\xF3la Polaki?"
+    Poniatowskiego na kr\xF3la Polski?"
 --- !u!222 &1726043254
 CanvasRenderer:
   m_ObjectHideFlags: 0

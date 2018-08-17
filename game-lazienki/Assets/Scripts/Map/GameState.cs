@@ -19,7 +19,11 @@ public class GameState : MonoBehaviour {
 	static public int visitedLwy;
 
 	static public bool takenCrown;
+	static public bool takenApple;
+	static public bool takenSceptre;
+
 	static public bool takenRembrandt;
+	static public bool takenLetter;
 
 	static public bool Lion1;
 	static public bool Lion2;
@@ -52,6 +56,16 @@ public class GameState : MonoBehaviour {
 		Lion2 = false;
 		Lion3 = false;
 		Lion4 = false;
+
+		Music1 = false;
+		Music2 = false;
+
+		takenApple = false;
+		takenCrown = false;
+		takenSceptre = false;
+
+		takenRembrandt = false;
+		takenLetter = false;
 	}
 		
 	void OnDestroy(){
@@ -135,10 +149,22 @@ public class GameState : MonoBehaviour {
 		takenCrown = true;
 	}
 
+	public void updateApple(){
+		takenApple = true;
+	}
+
+	public void updateSceptre(){
+		takenSceptre = true;
+	}
+
 	public void updateRembrandt(){
 		takenRembrandt = true;
 	}
-		
+
+	public void updateLetter(){
+		takenLetter = true;
+	}
+
 	//return character status
 	public int returnChopin(){
 		return visitedChopin;
@@ -172,10 +198,25 @@ public class GameState : MonoBehaviour {
 	public bool returnLion4(){
 		return Lion4;
 	}
+
 	public bool returnMusic(){
 		if (Music1 && Music2)
 			return true;
 		return false;
+	}
+	public bool returnMusic1(){
+		return Music1;
+	}
+	public bool returnMusic2(){
+		return Music2;
+	}
+
+	public bool returnApple(){
+		return takenApple;
+	}
+
+	public bool returnSceptre(){
+		return takenSceptre;
 	}
 
 	public bool returnCrown(){
@@ -184,6 +225,10 @@ public class GameState : MonoBehaviour {
 
 	public bool returnRembrandt(){
 		return takenRembrandt;
+	}
+
+	public bool returnLetter(){
+		return takenLetter;
 	}
 
 	//test

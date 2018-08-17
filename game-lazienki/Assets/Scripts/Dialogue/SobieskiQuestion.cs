@@ -17,13 +17,8 @@ public class SobieskiQuestion : MonoBehaviour {
 	public Button answer1Button;
 	public Button answer2Button;
 
-	//item
-	public Sprite[] itemIcon;
-	public Image item;
 	public GameObject takeItemPanel;
 	public GameObject takeItemPanel2;
-
-	//AddItem a;
 
 	private int currentText = 0;
 
@@ -40,10 +35,10 @@ public class SobieskiQuestion : MonoBehaviour {
 
 		if (gs.returnSobieski() == 1) {
 			currentText = 6;
-			if (gs.checkForItem("Listy"))
-				answer2Button.gameObject.SetActive (false);
-			else
+			if (gs.returnChopin () == 2)
 				answer2Button.gameObject.SetActive (true);
+			else
+				answer2Button.gameObject.SetActive (false);
 		}
 			
 		updateText ();
@@ -58,16 +53,11 @@ public class SobieskiQuestion : MonoBehaviour {
 		questionText.text = questions [currentText];
 		answer1Button.GetComponentInChildren<Text>().text= answers1 [currentText];
 		answer2Button.GetComponentInChildren<Text>().text = answers2 [currentText];
-
-		//test
-		if(currentText == 6)
-			answer2Button.gameObject.SetActive (true);
 	}
 
 	public void answer1Selected(){
 		if (currentText == 0 || currentText == 6)
 			SceneManager.LoadScene (1);
-			//Debug.Log ("EXIT");
 		else if (currentText == 2)
 			currentText = currentText + 2;
 		else if (currentText == 3)
@@ -87,6 +77,8 @@ public class SobieskiQuestion : MonoBehaviour {
 
 			GameState gs = go.GetComponent<GameState>();
 			gs.updateSobieski (1);
+			gs.updateLetter ();
+			answer2Button.gameObject.SetActive (false);
 		}
 		else if(currentText == 7) {
 			takeItemPanel2.gameObject.SetActive (true);
@@ -99,6 +91,7 @@ public class SobieskiQuestion : MonoBehaviour {
 
 			GameState gs = go.GetComponent<GameState>();
 			gs.updateSobieski (2);
+			gs.updateApple ();
 		}
 
 		else if (currentText < 7)
@@ -107,7 +100,6 @@ public class SobieskiQuestion : MonoBehaviour {
 
 	public void answer2Selected(){
 		if (currentText == 3 || currentText == 4)
-			//Debug.Log ("EXIT");
 			SceneManager.LoadScene (1);
 		else if (currentText == 1)
 			currentText = 3;
